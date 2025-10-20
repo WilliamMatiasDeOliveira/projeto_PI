@@ -1,4 +1,5 @@
-    <footer class="container-fluid">
+
+   <footer class="container-fluid">
 
         <div class="principal-footer">
 
@@ -67,8 +68,19 @@
         </div>
 
     </footer>
-    <!-- link bootstrap js -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!-- link jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-3gJwYp4ZtLx6ih+6nFSaIkzI6kD4tZ7+PoT3p2Z9N6Y="
+        crossorigin="anonymous"></script>
+
+    <!-- link bootstrap cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+        <!-- link js aplication -->
+    <script src="assets/js/script.js"></script>
+
     </body>
 
     </html>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\ClienteController;
 use App\Controllers\MainController;
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -9,5 +10,11 @@ switch($url){
     case "/":
     case "/home":
         MainController::home();
+    break;
+    case "/form-cliente":
+        MainController::form_cliente();
+    break;
+    case "/form-cliente-submit":
+        ClienteController::form_cliente_submit();
     break;
 }
