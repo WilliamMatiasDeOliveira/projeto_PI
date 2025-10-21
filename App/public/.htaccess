@@ -1,0 +1,46 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /projeto_PI/App/public/
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>
+
+
+
+
+
+# # Ativar o mecanismo de reescrita de URLs
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+
+#     # Caminho base da pasta
+#     RewriteBase "projeto_PI/App/public"
+
+#     # Se o arquivo ou diretório existir, não reescreva a URL
+#     RewriteCond %{REQUEST_FILENAME} !-f
+#     RewriteCond %{REQUEST_FILENAME} !-d
+
+#     # Redirecionar todas as requisições para o index.php
+#     RewriteRule ^ index.php [L]
+# </IfModule>
+
+# # Impedir acesso direto a arquivos sensíveis
+# <FilesMatch "\.(env|json|lock|git|yml|yaml|log|ini|sh|sql)$">
+#     Order allow,deny
+#     Deny from all
+# </FilesMatch>
+
+# # Definir codificação padrão
+# AddDefaultCharset UTF-8
+
+# # Opcional: definir a página de erro padrão
+# ErrorDocument 404 /projeto_PI/404.php
+
+# #protege o .env
+# <Files .env>
+#     Order allow,deny
+#     Deny from all
+# </Files>
