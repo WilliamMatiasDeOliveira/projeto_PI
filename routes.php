@@ -11,6 +11,9 @@ switch($url){
     case "/home":
         MainController::home();
     break;
+    case "/login":
+        echo "Cliente criado com sucesso";
+        break;
     case "/form-cliente":
         MainController::form_cliente();
     break;
