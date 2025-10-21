@@ -10,6 +10,11 @@ if (isset($_SESSION['erros'])) {
     $erros = $_SESSION['erros'];
     unset($_SESSION['erros']);
 }
+
+if(isset($_SESSION['old'])){
+    $old = $_SESSION['old'];
+    unset($_SESSION['old']);
+}
 ?>
 
 <!-- se o e-mail já existir no bd -->
@@ -45,7 +50,7 @@ if (isset($_SESSION['erros'])) {
             <div class="form-cliente-pessoal form">
                 <div>
                     <label for="nome">Nome</label>
-                    <input type="text" name="nome" id="nome" class="form-control">
+                    <input type="text" name="nome" id="nome" class="form-control"value="<?= $old['nome'] ?? "" ?>">
                     <!-- erro -->
                     <?php if (isset($erros['nome'])): ?>
                         <div class="text-warning">
@@ -55,7 +60,7 @@ if (isset($_SESSION['erros'])) {
                 </div>
                 <div>
                     <label for="cpf">Cpf</label>
-                    <input type="text" name="cpf" id="cpf" class="form-control">
+                    <input type="text" name="cpf" id="cpf" class="form-control"value="<?= $old['cpf'] ?? "" ?>">
                     <!-- erro -->
                     <?php if (isset($erros['cpf'])): ?>
                         <div class="text-warning">
@@ -65,7 +70,7 @@ if (isset($_SESSION['erros'])) {
                 </div>
                 <div>
                     <label for="email">E-mail</label>
-                    <input type="email" name="email" id="email" class="form-control">
+                    <input type="email" name="email" id="email" class="form-control"value="<?= $old['email'] ?? "" ?>">
                     <!-- erro -->
                     <?php if (isset($erros['email'])): ?>
                         <div class="text-warning">
@@ -75,7 +80,7 @@ if (isset($_SESSION['erros'])) {
                 </div>
                 <div>
                     <label for="telefone">Telefone</label>
-                    <input type="text" name="telefone" id="telefone" class="form-control">
+                    <input type="text" name="telefone" id="telefone" class="form-control"value="<?= $old['telefone'] ?? "" ?>">
                     <!-- erro -->
                     <?php if (isset($erros['telefone'])): ?>
                         <div class="text-warning">
@@ -88,7 +93,7 @@ if (isset($_SESSION['erros'])) {
             <div class="form-cliente-endereco form">
                 <div>
                     <label for="cep">Cep</label>
-                    <input type="text" name="cep" id="cep" class="form-control">
+                    <input type="text" name="cep" id="cep" class="form-control"value="<?= $old['cep'] ?? "" ?>">
                     <!-- erro -->
                     <?php if (isset($erros['cep'])): ?>
                         <div class="text-warning">
@@ -98,7 +103,7 @@ if (isset($_SESSION['erros'])) {
                 </div>
                 <div>
                     <label for="rua">Rua</label>
-                    <input type="text" name="rua" id="rua" class="form-control">
+                    <input type="text" name="rua" id="rua" class="form-control"value="<?= $old['rua'] ?? "" ?>">
                     <!-- erro -->
                     <?php if (isset($erros['rua'])): ?>
                         <div class="text-warning">
@@ -108,7 +113,7 @@ if (isset($_SESSION['erros'])) {
                 </div>
                 <div>
                     <label for="cidade">Cidade</label>
-                    <input type="text" name="cidade" id="cidade" class="form-control">
+                    <input type="text" name="cidade" id="cidade" class="form-control"value="<?= $old['cidade'] ?? "" ?>">
                     <!-- erro -->
                     <?php if (isset($erros['cidade'])): ?>
                         <div class="text-warning">
@@ -118,7 +123,7 @@ if (isset($_SESSION['erros'])) {
                 </div>
                 <div>
                     <label for="bairro">Bairro</label>
-                    <input type="text" name="bairro" id="bairro" class="form-control">
+                    <input type="text" name="bairro" id="bairro" class="form-control"value="<?= $old['bairro'] ?? "" ?>">
                     <!-- erro -->
                     <?php if (isset($erros['bairro'])): ?>
                         <div class="text-warning">
