@@ -90,7 +90,7 @@ if (isset($_SESSION['erros'])) {
                     <label for="cep">Cep</label>
                     <input type="text" name="cep" id="cep" class="form-control">
                     <!-- erro -->
-                    <?php if (isset($erros['cpf'])): ?>
+                    <?php if (isset($erros['cep'])): ?>
                         <div class="text-warning">
                             <?= $erros['cep'] ?>
                         </div>
@@ -141,7 +141,7 @@ if (isset($_SESSION['erros'])) {
                     <?php endif; ?>
                 </div>
                 <div>
-                    <label for="password_confirmation">Confirmar Senha</label>
+                    <label for="confirmar_senha">Confirmar Senha</label>
                     <input type="password" name="confirmar_senha" class="form-control">
                     <!-- erro -->
                     <?php if (isset($erros['confirmar_senha'])): ?>
@@ -150,9 +150,9 @@ if (isset($_SESSION['erros'])) {
                         </div>
                     <?php endif; ?>
                     <!-- erro -->
-                    <?php if (isset($erros['confirmation_password'])): ?>
+                    <?php if (isset($erros['confirmar_senha'])): ?>
                         <div class="text-warning">
-                            <?= $erros['confirmation_password'] ?>
+                            <?= $erros['confirmar_senha'] ?>
                         </div>
                     <?php endif; ?>
                 </div>
@@ -182,6 +182,10 @@ if (isset($_SESSION['erros'])) {
 </div>
 
 <script>
+
+    // função para integrar a api viaCep ao form
+
+    // trecho para esperar o dom carregar
     document.addEventListener('DOMContentLoaded', () => {
         const cepInput = document.getElementById('cep');
         const ruaInput = document.getElementById('rua');
@@ -220,6 +224,29 @@ if (isset($_SESSION['erros'])) {
             }
         });
     });
+
+    // função para as menssagens com alert sumam
+
+    // trecho para esperar o DOM carregar
+    document.addEventListener("DOMContentLoaded", () => {
+        // Seleciona todos os elementos com a classe alert
+        const alerts = document.querySelectorAll(".alert");
+
+        // Define um tempo (3 segundos = 3000ms)
+        setTimeout(() => {
+            alerts.forEach(alert => {
+                // Adiciona uma transição suave antes de sumir
+                alert.style.transition = "opacity 0.5s ease";
+                alert.style.opacity = "0";
+
+                // Remove do DOM depois que a transição termina
+                setTimeout(() => {
+                    alert.remove();
+                }, 500);
+            });
+        }, 3000);
+    });
+
 </script>
 
 

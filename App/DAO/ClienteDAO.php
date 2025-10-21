@@ -8,6 +8,7 @@ use PDOException;
 
 class ClienteDAO extends Connection{
 
+    // função para verificar se este email já esta cadastrado no bd
     public function checkIfClientExists($email){
         $sql = "SELECT * FROM clientes WHERE email = :email";
         $stmt = $this->pdo->prepare($sql);

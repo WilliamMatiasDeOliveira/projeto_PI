@@ -15,4 +15,8 @@ class MainController{
     public static function form_cliente(){
         require_once VIEWS."/form-cliente.php";
     }
+
+    public static function form_cuidador(){
+        require_once VIEWS."/form-cuidador.php";
+    }
 }

@@ -81,7 +81,7 @@ class ClienteController
         // Verificar se o campo senha e confirmar_senha são iguais
         if ($dados['senha'] !== $dados['confirmar_senha']) {
             session_start();
-            $erros['confirmation_password'] = "As senhas dever ser iguais !";
+            $erros['confirmar_senha'] = "As senhas dever ser iguais !";
             $_SESSION['erros'] = $erros;
             header("Location: /projeto_PI/form-cliente");
             exit;

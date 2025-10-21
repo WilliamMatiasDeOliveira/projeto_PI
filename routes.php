@@ -1,6 +1,7 @@
 <?php
 
 use App\Controllers\ClienteController;
+use App\Controllers\CuidadorController;
 use App\Controllers\MainController;
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -19,5 +20,11 @@ switch($url){
     break;
     case "/form-cliente-submit":
         ClienteController::form_cliente_submit();
+    break;
+    case "/form-cuidador":
+        MainController::form_cuidador();
+    break;
+    case "/form-cuidador-submit":
+        CuidadorController::form_cuidador_submit();
     break;
 }
