@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\DAO\ClienteDAO;
 use App\Functions\Helpers;
+use App\Models\Cliente;
 
 class ClienteController
 {
@@ -14,6 +15,7 @@ class ClienteController
             "nome" => Helpers::cleanInput($_POST['nome']),
             "cpf" => Helpers::cleanInput($_POST['cpf']),
             "email" => Helpers::cleanInput($_POST['email']),
+            "tipo" => Helpers::cleanInput($_POST['tipo']),
             "telefone" => Helpers::cleanInput($_POST['telefone']),
             "cep" => Helpers::cleanInput($_POST['cep']),
             "rua" => Helpers::cleanInput($_POST['rua']),
@@ -88,7 +90,7 @@ class ClienteController
         // tratamento e movimentação da foto
         $foto_nome = null;
 
-        if(isset($_FILES['foto']) && $_FILES['foto']['error'] === UPLOAD_ERR_OK){
+        if (isset($_FILES['foto']) && $_FILES['foto']['error'] === UPLOAD_ERR_OK) {
             // pegando o caminho temporario
             $foto_temp = $_FILES['foto']['tmp_name'];
             // pega o nome original
@@ -98,8 +100,8 @@ class ClienteController
             // força a extensão a ter letras pequenas
             $extensao = strtolower($extensao);
             // verifica se a extensão é de um formato aceitavel
-            if($extensao !== "jpg" && $extensao !== "jpeg" && $extensao !== "png"){
-                session_start(); 
+            if ($extensao !== "jpg" && $extensao !== "jpeg" && $extensao !== "png") {
+                session_start();
                 $erros['foto_invalida'] = "Formato inválido";
                 $_SESSION['erros'] = $erros;
                 header("Location: /projeto_PI/form-cliente");
@@ -108,9 +110,9 @@ class ClienteController
             // gera um nome unico para a foto
             $foto_nome = uniqid("cliente_", true) . "." . $extensao;
             // montando o caminho de destino
-            $destino = __DIR__."/../public/assets/imgs/clientes/" . $foto_nome;
+            $destino = __DIR__ . "/../public/assets/imgs/clientes/" . $foto_nome;
             // verificando se a movimentação falhou
-            if(!move_uploaded_file($foto_temp, $destino)){
+            if (!move_uploaded_file($foto_temp, $destino)) {
                 session_start();
                 $erros['fail_foto_saved'] = "Falha em salvar a foto";
                 $_SESSION['erros'] = $erros;
@@ -119,11 +121,24 @@ class ClienteController
             }
 
             $dados['foto'] = $foto_nome;
-
         }
 
+        // criando o objeto cliente
+        $cliente = new Cliente();
+        $cliente->setNome($dados['nome']);
+        $cliente->setCpf($dados['cpf']);
+        $cliente->setEmail($dados['email']);
+        $cliente->setTipo($dados['tipo']);
+        $cliente->setTelefone($dados['telefone']);
+        $cliente->setCep($dados['cep']);
+        $cliente->setRua($dados['rua']);
+        $cliente->setCidade($dados['cidade']);
+        $cliente->setBairro($dados['bairro']);
+        $cliente->setSenha($dados['senha']);
+        $cliente->setFoto($foto_nome);
+
         // cadastra o cliente no banco de dados
-        $dao->save($dados);
+        $dao->save($cliente);
 
         // se o cliente for salvo com sucesso
         session_start();

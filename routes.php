@@ -12,7 +12,7 @@ switch($url){
         MainController::home();
     break;
     case "/login":
-        echo "Cliente criado com sucesso";
+        MainController::login();
         break;
     case "/form-cliente":
         MainController::form_cliente();

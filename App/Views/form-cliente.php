@@ -40,7 +40,7 @@ if (isset($_SESSION['erros'])) {
 
         <form action="/projeto_PI/form-cliente-submit" method="post" enctype="multipart/form-data">
 
-            <input type="hidden" name="tipo_usuario" value="cliente">
+            <input type="hidden" name="tipo" value="cliente">
 
             <div class="form-cliente-pessoal form">
                 <div>

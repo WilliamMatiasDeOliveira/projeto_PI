@@ -8,6 +8,10 @@ class MainController{
         require_once __DIR__."/../Views/home.php";
     }
 
+    public static function login(){
+        require_once VIEWS."/login.php";
+    }
+
     public static function form_cliente(){
         require_once VIEWS."/form-cliente.php";
     }
