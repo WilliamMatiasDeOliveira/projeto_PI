@@ -27,4 +27,16 @@ class MainController{
     public static function reset_password(){
         require_once VIEWS."/reset_password.php";
     }
+
+    public static function cadastro(){
+        require_once VIEWS."/cadastro.php";
+    }
+
+    public static function sobre_nos(){
+        require_once VIEWS."/sobre-nos.php";
+    }
+
+    public static function contatos(){
+        require_once VIEWS."/contatos.php";
+    }
 }

@@ -59,6 +59,7 @@ class PasswordDAO extends Connection
             UPDATE {$this->table} 
             SET reset_token = NULL, token_expiration = NULL 
             WHERE reset_token = :token
+            
         ");
         $stmt->bindValue(":token", $token);
         $stmt->execute();

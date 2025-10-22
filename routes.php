@@ -25,6 +25,25 @@ switch ($url) {
     case "/form-cuidador":
         MainController::form_cuidador();
         break;
+    case "/cadastro":
+        MainController::cadastro();
+        break;
+    case "/sobre-nos":
+        MainController::sobre_nos();
+        break;
+    case "/contatos":
+        MainController::contatos();
+        break;
+
+
+
+
+
+
+
+        // ===========================================================
+            // ROTAS EXCLUSIVAS PARA RECUPERAÇÃO DE SENHA
+        // ===========================================================
 
          // Página com o campo de e-mail
     case "/forgot-password":

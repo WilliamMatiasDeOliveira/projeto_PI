@@ -24,7 +24,10 @@ CREATE TABLE IF NOT EXISTS clientes(
 	telefone VARCHAR(14) NOT NULL,
 	foto VARCHAR(255),
 	endereco_id BIGINT UNSIGNED,
-	FOREIGN KEY (endereco_id) REFERENCES enderecos(id_endereco)
+	FOREIGN KEY (endereco_id) REFERENCES enderecos(id_endereco),
+	reset_token VARCHAR(255) NULL,
+	token_expiration DATETIME NULL
+	
 );
 
 CREATE TABLE IF NOT EXISTS cuidadores(
@@ -38,7 +41,9 @@ CREATE TABLE IF NOT EXISTS cuidadores(
 	foto VARCHAR(255),
 	curriculo VARCHAR(255),
 	endereco_id BIGINT UNSIGNED,
-	FOREIGN KEY (endereco_id) REFERENCES enderecos(id_endereco)
+	FOREIGN KEY (endereco_id) REFERENCES enderecos(id_endereco),
+	reset_token VARCHAR(255) NULL,
+	token_expiration DATETIME NULL
 );
 
 
@@ -75,20 +80,6 @@ CREATE TABLE IF NOT EXISTS avaliacoes(
 	FOREIGN KEY (cuidador_id) REFERENCES cuidadores(id_cuidador),
 	FOREIGN KEY (servico_id) REFERENCES servicos(id_servico)
 );
-
-ALTER TABLE clientes 
-ADD COLUMN reset_token VARCHAR(255) NULL,
-ADD COLUMN token_expiration DATETIME NULL;
-
-ALTER TABLE cuidadores 
-ADD COLUMN reset_token VARCHAR(255) NULL,
-ADD COLUMN token_expiration DATETIME NULL;
-
-
-
-
-
-
 
 
 

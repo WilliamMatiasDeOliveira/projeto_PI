@@ -8,7 +8,7 @@ class ForgotPasswordController
 {
     /**
      * ================================================================
-     * 1️⃣ PROCESSA O FORMULÁRIO "ESQUECEU A SENHA"
+     * PROCESSA O FORMULÁRIO "ESQUECEU A SENHA"
      * rota: /forgot-password-submit
      * ================================================================
      */
@@ -64,7 +64,7 @@ class ForgotPasswordController
 
     /**
      * ================================================================
-     * 2️⃣ EXIBE A VIEW DE REDEFINIÇÃO DE SENHA (ACESSADA VIA TOKEN)
+     * EXIBE A VIEW DE REDEFINIÇÃO DE SENHA (ACESSADA VIA TOKEN)
      * rota: /reset-password/{token}
      * ================================================================
      */
@@ -84,7 +84,7 @@ class ForgotPasswordController
 
     /**
      * ================================================================
-     * 3️⃣ PROCESSA A NOVA SENHA
+     * PROCESSA A NOVA SENHA
      * rota: /reset-password-submit
      * ================================================================
      */
