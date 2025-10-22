@@ -73,4 +73,57 @@ class CuidadorDAO extends Connection{
             throw new Exception("Erro na transação".$e->getMessage());
         }
     }
+
+    public function findByEmail($email)
+{
+    $sql = "SELECT * FROM cuidadores WHERE email = :email";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(":email", $email);
+    $stmt->execute();
+    return $stmt->fetch(\PDO::FETCH_ASSOC);
+}
+
+public function saveResetToken($email, $token, $expira)
+{
+    $sql = "UPDATE cuidadores SET reset_token = :token, reset_expira = :expira WHERE email = :email";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute([
+        ':token' => $token,
+        ':expira' => $expira,
+        ':email' => $email
+    ]);
+}
+
+public function verifyToken($token)
+{
+    $sql = "SELECT email FROM cuidadores WHERE reset_token = :token AND reset_expira > NOW()";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(':token', $token);
+    $stmt->execute();
+    $user = $stmt->fetch(\PDO::FETCH_ASSOC);
+    return $user ? $user['email'] : false;
+}
+
+public function updatePassword($email, $senhaHash)
+{
+    $sql = "UPDATE cuidadores SET senha = :senha WHERE email = :email";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute([
+        ':senha' => $senhaHash,
+        ':email' => $email
+    ]);
+}
+
+public function deleteToken($token)
+{
+    $sql = "UPDATE cuidadores SET reset_token = NULL, reset_expira = NULL WHERE reset_token = :token";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(':token', $token);
+    $stmt->execute();
+}
+
+
+
+
+
 }

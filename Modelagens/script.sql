@@ -76,6 +76,16 @@ CREATE TABLE IF NOT EXISTS avaliacoes(
 	FOREIGN KEY (servico_id) REFERENCES servicos(id_servico)
 );
 
+ALTER TABLE clientes 
+ADD COLUMN reset_token VARCHAR(255) NULL,
+ADD COLUMN token_expiration DATETIME NULL;
+
+ALTER TABLE cuidadores 
+ADD COLUMN reset_token VARCHAR(255) NULL,
+ADD COLUMN token_expiration DATETIME NULL;
+
+
+
 
 
 

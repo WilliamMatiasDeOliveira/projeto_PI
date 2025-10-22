@@ -36,7 +36,7 @@ if (isset($_SESSION['success'])) {
             </div>
             <div class="links">
                 <a href="#" class="text-light">Ainda não tem conta ?</a>
-                <a href="#" class="text-light">Esqueceu a senha ?</a>
+                <a href="/projeto_PI/forgot-password" class="text-light">Esqueceu a senha ?</a>
             </div>
         </form>
     </section>

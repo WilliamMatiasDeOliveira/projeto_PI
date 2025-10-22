@@ -19,4 +19,12 @@ class MainController{
     public static function form_cuidador(){
         require_once VIEWS."/form-cuidador.php";
     }
+
+    public static function forgot_password(){
+        require_once VIEWS."/forgot_password.php";
+    }
+
+    public static function reset_password(){
+        require_once VIEWS."/reset_password.php";
+    }
 }

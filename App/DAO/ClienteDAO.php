@@ -72,4 +72,53 @@ class ClienteDAO extends Connection{
         }
     }
 
+    public function findByEmail($email)
+{
+    $sql = "SELECT * FROM clientes WHERE email = :email";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(":email", $email);
+    $stmt->execute();
+    return $stmt->fetch(\PDO::FETCH_ASSOC);
+}
+
+public function saveResetToken($email, $token, $expira)
+{
+    $sql = "UPDATE clientes SET reset_token = :token, reset_expira = :expira WHERE email = :email";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute([
+        ':token' => $token,
+        ':expira' => $expira,
+        ':email' => $email
+    ]);
+}
+
+public function verifyToken($token)
+{
+    $sql = "SELECT email FROM clientes WHERE reset_token = :token AND reset_expira > NOW()";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(':token', $token);
+    $stmt->execute();
+    $user = $stmt->fetch(\PDO::FETCH_ASSOC);
+    return $user ? $user['email'] : false;
+}
+
+public function updatePassword($email, $senhaHash)
+{
+    $sql = "UPDATE clientes SET senha = :senha WHERE email = :email";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute([
+        ':senha' => $senhaHash,
+        ':email' => $email
+    ]);
+}
+
+public function deleteToken($token)
+{
+    $sql = "UPDATE clientes SET reset_token = NULL, reset_expira = NULL WHERE reset_token = :token";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(':token', $token);
+    $stmt->execute();
+}
+
+
 }
