@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\DAO\CheckEmail;
 use App\DAO\ClienteDAO;
 use App\Functions\Helpers;
 use App\Models\Cliente;
@@ -79,10 +80,10 @@ class ClienteController
             exit;
         }
 
-        // Verificar se este usuario ja existe verificando se este email ja foi cadastrado
-        $dao = new ClienteDAO();
+        // Verificar se este email ja existe no bd verificando se este email ja foi cadastrado
+        $check_email = new CheckEmail();
 
-        if (!$dao->checkIfClientExists($dados['email'])) {
+        if (!$check_email->checkIfEmailExists($dados['email'])) {
             session_start();
             $erros['email_exists'] = "Este e-mail ja está em uso !";
             $_SESSION['erros'] = $erros;
@@ -108,17 +109,17 @@ class ClienteController
             $erros['confirmar_senha'] = "As senhas dever ser iguais !";
             $_SESSION['erros'] = $erros;
 
-             $old = [
-            "nome" => $_POST['nome'],
-            "cpf" => $_POST['cpf'],
-            "email" => $_POST['email'],
-            "telefone" => $_POST['telefone'],
-            "cep" => $_POST['cep'],
-            "rua" => $_POST['rua'],
-            "cidade" => $_POST['cidade'],
-            "bairro" => $_POST['bairro'],
-        ];
-        $_SESSION['old'] = $old;
+            $old = [
+                "nome" => $_POST['nome'],
+                "cpf" => $_POST['cpf'],
+                "email" => $_POST['email'],
+                "telefone" => $_POST['telefone'],
+                "cep" => $_POST['cep'],
+                "rua" => $_POST['rua'],
+                "cidade" => $_POST['cidade'],
+                "bairro" => $_POST['bairro'],
+            ];
+            $_SESSION['old'] = $old;
             header("Location: /projeto_PI/form-cliente");
             exit;
         }
@@ -141,17 +142,17 @@ class ClienteController
                 $erros['foto_invalida'] = "Formato inválido";
                 $_SESSION['erros'] = $erros;
 
-                 $old = [
-            "nome" => $_POST['nome'],
-            "cpf" => $_POST['cpf'],
-            "email" => $_POST['email'],
-            "telefone" => $_POST['telefone'],
-            "cep" => $_POST['cep'],
-            "rua" => $_POST['rua'],
-            "cidade" => $_POST['cidade'],
-            "bairro" => $_POST['bairro'],
-        ];
-        $_SESSION['old'] = $old;
+                $old = [
+                    "nome" => $_POST['nome'],
+                    "cpf" => $_POST['cpf'],
+                    "email" => $_POST['email'],
+                    "telefone" => $_POST['telefone'],
+                    "cep" => $_POST['cep'],
+                    "rua" => $_POST['rua'],
+                    "cidade" => $_POST['cidade'],
+                    "bairro" => $_POST['bairro'],
+                ];
+                $_SESSION['old'] = $old;
                 header("Location: /projeto_PI/form-cliente");
                 exit;
             }
@@ -165,17 +166,17 @@ class ClienteController
                 $erros['fail_foto_saved'] = "Falha em salvar a foto";
                 $_SESSION['erros'] = $erros;
 
-                 $old = [
-            "nome" => $_POST['nome'],
-            "cpf" => $_POST['cpf'],
-            "email" => $_POST['email'],
-            "telefone" => $_POST['telefone'],
-            "cep" => $_POST['cep'],
-            "rua" => $_POST['rua'],
-            "cidade" => $_POST['cidade'],
-            "bairro" => $_POST['bairro'],
-        ];
-        $_SESSION['old'] = $old;
+                $old = [
+                    "nome" => $_POST['nome'],
+                    "cpf" => $_POST['cpf'],
+                    "email" => $_POST['email'],
+                    "telefone" => $_POST['telefone'],
+                    "cep" => $_POST['cep'],
+                    "rua" => $_POST['rua'],
+                    "cidade" => $_POST['cidade'],
+                    "bairro" => $_POST['bairro'],
+                ];
+                $_SESSION['old'] = $old;
                 header("Location: /projeto_PI/form-cliente");
                 exit;
             }
@@ -198,6 +199,8 @@ class ClienteController
         $cliente->setBairro($dados['bairro']);
         $cliente->setSenha($dados['senha']);
         $cliente->setFoto($foto_nome);
+
+        $dao = new ClienteDAO();
 
         // cadastra o cliente no banco de dados
         $dao->save($cliente);

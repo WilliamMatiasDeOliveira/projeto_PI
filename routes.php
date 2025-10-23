@@ -4,6 +4,7 @@ use App\Controllers\ClienteController;
 use App\Controllers\CuidadorController;
 use App\Controllers\MainController;
 use App\Controllers\ForgotPasswordController;
+use App\Controllers\LoginController;
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $url = str_replace("/projeto_PI", "", $url);
@@ -16,6 +17,9 @@ switch ($url) {
     case "/login":
         MainController::login();
         break;
+    case "/login-submit":
+        LoginController::login_submit();
+        break; 
     case "/form-cliente":
         MainController::form_cliente();
         break;
@@ -25,6 +29,9 @@ switch ($url) {
     case "/form-cuidador":
         MainController::form_cuidador();
         break;
+    case "/form-cuidador-submit":
+        CuidadorController::form_cuidador_submit();
+        break;
     case "/cadastro":
         MainController::cadastro();
         break;
@@ -33,6 +40,12 @@ switch ($url) {
         break;
     case "/contatos":
         MainController::contatos();
+        break;
+    case "/dashboard-cliente":
+        MainController::dashboard_cliente();
+        break;
+    case "/dashboard-cuidador":
+        MainController::dashboard_cuidador();
         break;
 
 

@@ -39,4 +39,12 @@ class MainController{
     public static function contatos(){
         require_once VIEWS."/contatos.php";
     }
+
+    public static function dashboard_cliente(){
+        require_once VIEWS."/dashboard-cliente.php";
+    }
+
+    public static function dashboard_cuidador(){
+        require_once VIEWS."/dashboard-cuidador.php";
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\DAO\CheckEmail;
 use App\DAO\CuidadorDAO;
 use App\Functions\Helpers;
 use App\Models\Cuidador;
@@ -82,10 +83,10 @@ class CuidadorController
             exit;
         }
 
-        // Verificar se este usuario ja existe verificando se este email ja foi cadastrado
-        $dao = new CuidadorDAO();
+        // Verificar se este email ja existe no banco de dados
+        $check_email = new CheckEmail();
 
-        if (!$dao->checkIfClientExists($dados['email'])) {
+        if (!$check_email->checkIfEmailExists($dados['email'])) {
             session_start();
             $erros['email_exists'] = "Este e-mail ja está em uso !";
             $_SESSION['erros'] = $erros;
@@ -253,6 +254,8 @@ class CuidadorController
         $cuidador->setSenha($dados['senha']);
         $cuidador->setFoto($foto_nome);
         $cuidador->setCurriculo($curriculo_nome);
+
+        $dao = new CuidadorDAO();
 
         // cadastra o cliente no banco de dados
         $dao->save($cuidador);

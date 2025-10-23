@@ -1,60 +1,67 @@
+<?php
+if (isset($_SESSION['user'])) {
+  $user = $_SESSION['user'];
+}
+?>
+
+
 <style>
-    /* ======== NAVBAR ======== */
-.navbar {
-  transition: all 0.3s ease;
-}
+  .navbar {
+    transition: all 0.3s ease;
+  }
 
-.logo-img {
-  height: 45px;
-  width: auto;
-}
-
-.nav-link {
-  color: #333 !important;
-  font-weight: 500;
-  margin: 0 8px;
-  transition: color 0.3s ease, transform 0.2s;
-}
-
-.nav-link:hover {
-  color: #007bff !important;
-  transform: scale(1.05);
-}
-
-.navbar .btn {
-  border-radius: 20px;
-  font-weight: 500;
-}
-
-.btn-outline-primary:hover {
-  color: #fff !important;
-}
-
-/* Responsivo */
-@media (max-width: 992px) {
-  .navbar-collapse {
-    background-color: #f8f9fa;
-    padding: 1rem;
-    border-radius: 10px;
+  .logo-img {
+    height: 45px;
+    width: auto;
   }
 
   .nav-link {
-    display: block;
-    margin: 10px 0;
-    text-align: center;
+    color: #333 !important;
+    font-weight: 500;
+    margin: 0 8px;
+    transition: color 0.3s ease, transform 0.2s;
   }
 
-  .d-flex.gap-2 {
-    flex-direction: column;
-    align-items: center;
+  .nav-link:hover {
+    color: #007bff !important;
+    transform: scale(1.05);
   }
 
   .navbar .btn {
-    width: 100%;
+    border-radius: 20px;
+    font-weight: 500;
   }
-}
 
+  .btn-outline-primary:hover {
+    color: #fff !important;
+  }
+
+  /* Responsivo */
+  @media (max-width: 992px) {
+    .navbar-collapse {
+      background-color: #f8f9fa;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+
+    .nav-link {
+      display: block;
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    .d-flex.gap-2 {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .navbar .btn {
+      width: 100%;
+    }
+  }
 </style>
+
+<!-- /* ======== NAVBAR ======== */ -->
 
 <div class="navbar navbar-expand-lg bg-light shadow-sm py-2">
   <div class="container d-flex justify-content-between align-items-center">
@@ -90,11 +97,29 @@
         </li>
       </ul>
 
-      <!-- BOTÕES -->
+      <!-- BOTÕES
+        <div class="d-flex gap-2">
+          <a href="/projeto_PI/login" class="btn btn-outline-primary px-3">Entrar</a>
+          <a href="/projeto_PI/cadastro" class="btn btn-primary px-3">Cadastrar</a>
+        </div> -->
+
+         <!-- BOTÕES -->
       <div class="d-flex gap-2">
-        <a href="/projeto_PI/login" class="btn btn-outline-primary px-3">Entrar</a>
-        <a href="/projeto_PI/cadastro" class="btn btn-primary px-3">Cadastrar</a>
+        <?php if ($user): ?>
+          <?php if ($user['tipo'] === 'cliente'): ?>
+            <a href="/projeto_PI/dashboard-cliente" class="btn btn-outline-primary px-3">Perfil</a>
+          <?php else: ?>
+            <a href="/projeto_PI/dashboard-cuidador" class="btn btn-outline-primary px-3">Perfil</a>
+          <?php endif; ?>
+          <a href="/projeto_PI/logout" class="btn btn-primary px-3">Sair</a>
+        <?php else: ?>
+          <a href="/projeto_PI/login" class="btn btn-outline-primary px-3">Entrar</a>
+          <a href="/projeto_PI/cadastro" class="btn btn-primary px-3">Cadastrar</a>
+        <?php endif; ?>
       </div>
+
+
+
     </div>
   </div>
 </div>
