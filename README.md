@@ -212,8 +212,11 @@ Fonte: Elaborado pelos autores.
 
 ### 8.2 Cores e Estilo  
 A escolha das cores azul e branco para compor a página foi feita para transmitir sensações de confiança, tranquilidade e profissionalismo. 
+
 <strong>Azul →</strong> é amplamente associado à segurança, saúde e tecnologia, além de ser uma cor que inspira calma e credibilidade. 
+
 <strong>Branco →</strong>  reforça a ideia de limpeza, clareza e simplicidade, tornando a navegação mais leve e agradável. 
+
 Juntas, essas cores criam um ambiente acolhedor e confiável, essencial para uma plataforma voltada ao cuidado e bem-estar.
 
 ### 8.3 Tipografia  
