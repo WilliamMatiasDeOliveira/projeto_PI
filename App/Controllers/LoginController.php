@@ -18,7 +18,6 @@ class LoginController
             $senha = $_POST['senha'];
 
             $erros = [];
-            $old = [];
 
             if (empty($email)) {
                 $erros['email'] = "Preencha um E-mail";

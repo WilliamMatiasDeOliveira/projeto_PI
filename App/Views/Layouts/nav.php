@@ -4,7 +4,6 @@ if (isset($_SESSION['user'])) {
 }
 ?>
 
-
 <style>
   .navbar {
     transition: all 0.3s ease;
@@ -105,7 +104,7 @@ if (isset($_SESSION['user'])) {
 
          <!-- BOTÕES -->
       <div class="d-flex gap-2">
-        <?php if ($user): ?>
+        <?php if (isset($user['tipo'])): ?>
           <?php if ($user['tipo'] === 'cliente'): ?>
             <a href="/projeto_PI/dashboard-cliente" class="btn btn-outline-primary px-3">Perfil</a>
           <?php else: ?>
