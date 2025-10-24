@@ -5,6 +5,7 @@ use App\Controllers\CuidadorController;
 use App\Controllers\MainController;
 use App\Controllers\ForgotPasswordController;
 use App\Controllers\LoginController;
+use App\Controllers\LogoutController;
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $url = str_replace("/projeto_PI", "", $url);
@@ -46,6 +47,9 @@ switch ($url) {
         break;
     case "/dashboard-cuidador":
         MainController::dashboard_cuidador();
+        break;
+    case "/logout":
+        LogoutController::logout();
         break;
 
 

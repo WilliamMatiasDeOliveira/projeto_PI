@@ -64,18 +64,7 @@ class ClienteController
         if (!empty($erros)) {
             session_start();
             $_SESSION['erros'] = $erros;
-
-            $old = [
-                "nome" => $_POST['nome'],
-                "cpf" => $_POST['cpf'],
-                "email" => $_POST['email'],
-                "telefone" => $_POST['telefone'],
-                "cep" => $_POST['cep'],
-                "rua" => $_POST['rua'],
-                "cidade" => $_POST['cidade'],
-                "bairro" => $_POST['bairro'],
-            ];
-            $_SESSION['old'] = $old;
+            $_SESSION['old'] = $_POST;
             header("Location: /projeto_PI/form-cliente");
             exit;
         }
@@ -87,18 +76,7 @@ class ClienteController
             session_start();
             $erros['email_exists'] = "Este e-mail ja está em uso !";
             $_SESSION['erros'] = $erros;
-
-            $old = [
-                "nome" => $_POST['nome'],
-                "cpf" => $_POST['cpf'],
-                "email" => $_POST['email'],
-                "telefone" => $_POST['telefone'],
-                "cep" => $_POST['cep'],
-                "rua" => $_POST['rua'],
-                "cidade" => $_POST['cidade'],
-                "bairro" => $_POST['bairro'],
-            ];
-            $_SESSION['old'] = $old;
+            $_SESSION['old'] = $_POST;
             header("Location: /projeto_PI/form-cliente");
             exit;
         }
@@ -108,18 +86,7 @@ class ClienteController
             session_start();
             $erros['confirmar_senha'] = "As senhas dever ser iguais !";
             $_SESSION['erros'] = $erros;
-
-            $old = [
-                "nome" => $_POST['nome'],
-                "cpf" => $_POST['cpf'],
-                "email" => $_POST['email'],
-                "telefone" => $_POST['telefone'],
-                "cep" => $_POST['cep'],
-                "rua" => $_POST['rua'],
-                "cidade" => $_POST['cidade'],
-                "bairro" => $_POST['bairro'],
-            ];
-            $_SESSION['old'] = $old;
+            $_SESSION['old'] = $_POST;
             header("Location: /projeto_PI/form-cliente");
             exit;
         }

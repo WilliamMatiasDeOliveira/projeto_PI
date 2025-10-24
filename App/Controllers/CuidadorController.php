@@ -66,19 +66,7 @@ class CuidadorController
         if (!empty($erros)) {
             session_start();
             $_SESSION['erros'] = $erros;
-
-            $old = [
-                "nome" => $_POST['nome'],
-                "cpf" => $_POST['cpf'],
-                "email" => $_POST['email'],
-                "telefone" => $_POST['telefone'],
-                "cep" => $_POST['cep'],
-                "rua" => $_POST['rua'],
-                "cidade" => $_POST['cidade'],
-                "bairro" => $_POST['bairro'],
-            ];
-            $_SESSION['old'] = $old;
-
+            $_SESSION['old'] = $_POST;
             header("Location: /projeto_PI/form-cuidador");
             exit;
         }
@@ -90,18 +78,7 @@ class CuidadorController
             session_start();
             $erros['email_exists'] = "Este e-mail ja está em uso !";
             $_SESSION['erros'] = $erros;
-
-            $old = [
-                "nome" => $_POST['nome'],
-                "cpf" => $_POST['cpf'],
-                "email" => $_POST['email'],
-                "telefone" => $_POST['telefone'],
-                "cep" => $_POST['cep'],
-                "rua" => $_POST['rua'],
-                "cidade" => $_POST['cidade'],
-                "bairro" => $_POST['bairro'],
-            ];
-            $_SESSION['old'] = $old;
+            $_SESSION['old'] = $_POST;
             header("Location: /projeto_PI/form-cuidador");
             exit;
         }
@@ -111,18 +88,7 @@ class CuidadorController
             session_start();
             $erros['confirmar_senha'] = "As senhas dever ser iguais !";
             $_SESSION['erros'] = $erros;
-
-            $old = [
-                "nome" => $_POST['nome'],
-                "cpf" => $_POST['cpf'],
-                "email" => $_POST['email'],
-                "telefone" => $_POST['telefone'],
-                "cep" => $_POST['cep'],
-                "rua" => $_POST['rua'],
-                "cidade" => $_POST['cidade'],
-                "bairro" => $_POST['bairro'],
-            ];
-            $_SESSION['old'] = $old;
+            $_SESSION['old'] = $_POST;
             header("Location: /projeto_PI/form-cuidador");
             exit;
         }
@@ -144,18 +110,7 @@ class CuidadorController
                 session_start();
                 $erros['foto_invalida'] = "Formato inválido";
                 $_SESSION['erros'] = $erros;
-
-                $old = [
-                    "nome" => $_POST['nome'],
-                    "cpf" => $_POST['cpf'],
-                    "email" => $_POST['email'],
-                    "telefone" => $_POST['telefone'],
-                    "cep" => $_POST['cep'],
-                    "rua" => $_POST['rua'],
-                    "cidade" => $_POST['cidade'],
-                    "bairro" => $_POST['bairro'],
-                ];
-                $_SESSION['old'] = $old;
+                $_SESSION['old'] = $_POST;
                 header("Location: /projeto_PI/form-cuidador");
                 exit;
             }
@@ -193,18 +148,7 @@ class CuidadorController
                 session_start();
                 $erros['curriculo_invalido'] = "Formato de currículo inválido. Envie um arquivo PDF, DOC ou DOCX.";
                 $_SESSION['erros'] = $erros;
-
-                $old = [
-                    "nome" => $_POST['nome'],
-                    "cpf" => $_POST['cpf'],
-                    "email" => $_POST['email'],
-                    "telefone" => $_POST['telefone'],
-                    "cep" => $_POST['cep'],
-                    "rua" => $_POST['rua'],
-                    "cidade" => $_POST['cidade'],
-                    "bairro" => $_POST['bairro'],
-                ];
-                $_SESSION['old'] = $old;
+                $_SESSION['old'] = $_POST;
                 header("Location: /projeto_PI/form-cuidador");
                 exit;
             }
@@ -220,18 +164,7 @@ class CuidadorController
                 session_start();
                 $erros['fail_curriculo_saved'] = "Falha ao salvar o currículo.";
                 $_SESSION['erros'] = $erros;
-
-                $old = [
-                    "nome" => $_POST['nome'],
-                    "cpf" => $_POST['cpf'],
-                    "email" => $_POST['email'],
-                    "telefone" => $_POST['telefone'],
-                    "cep" => $_POST['cep'],
-                    "rua" => $_POST['rua'],
-                    "cidade" => $_POST['cidade'],
-                    "bairro" => $_POST['bairro'],
-                ];
-                $_SESSION['old'] = $old;
+                $_SESSION['old'] = $_POST;
                 header("Location: /projeto_PI/form-cuidador");
                 exit;
             }

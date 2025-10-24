@@ -110,7 +110,14 @@ if (isset($_SESSION['user'])) {
           <?php else: ?>
             <a href="/projeto_PI/dashboard-cuidador" class="btn btn-outline-primary px-3">Perfil</a>
           <?php endif; ?>
-          <a href="/projeto_PI/logout" class="btn btn-primary px-3">Sair</a>
+          <!-- <a href="/projeto_PI/logout" class="btn btn-primary px-3">Sair</a> -->
+
+            <form action="/projeto_PI/logout" method="post">
+              <input type="submit"class="btn btn-primary px-3"value="Sair">
+            </form>
+
+
+
         <?php else: ?>
           <a href="/projeto_PI/login" class="btn btn-outline-primary px-3">Entrar</a>
           <a href="/projeto_PI/cadastro" class="btn btn-primary px-3">Cadastrar</a>
