@@ -33,7 +33,7 @@ if ($user) {
             </div>
             <ul class="list-unstyled components">
                 <li>
-                    <a href=""> <svg xmlns="http://www.w3.org/2000/svg"
+                    <a href="/projeto_PI/dashboard-cuidador"> <svg xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                             <path
                                 d="M463 448.2C440.9 409.8 399.4 384 352 384L288 384C240.6 384 199.1 409.8 177 448.2C212.2 487.4 263.2 512 320 512C376.8 512 427.8 487.3 463 448.2zM64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320zM320 336C359.8 336 392 303.8 392 264C392 224.2 359.8 192 320 192C280.2 192 248 224.2 248 264C248 303.8 280.2 336 320 336z"
@@ -41,13 +41,13 @@ if ($user) {
                         </svg> Perfil</a>
                 </li>
                 <li>
-                    <a href="/projeto_PI/logout
+                    <a href="/projeto_PI/cad-especialidade
                         "><svg xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                             <path
                                 d="M569 337C578.4 327.6 578.4 312.4 569 303.1L425 159C418.1 152.1 407.8 150.1 398.8 153.8C389.8 157.5 384 166.3 384 176L384 256L272 256C245.5 256 224 277.5 224 304L224 336C224 362.5 245.5 384 272 384L384 384L384 464C384 473.7 389.8 482.5 398.8 486.2C407.8 489.9 418.1 487.9 425 481L569 337zM224 160C241.7 160 256 145.7 256 128C256 110.3 241.7 96 224 96L160 96C107 96 64 139 64 192L64 448C64 501 107 544 160 544L224 544C241.7 544 256 529.7 256 512C256 494.3 241.7 480 224 480L160 480C142.3 480 128 465.7 128 448L128 192C128 174.3 142.3 160 160 160L224 160z"
                                 fill="currentColor" />
-                        </svg> Solicitações</a>
+                        </svg> Cadastrar Especialidade </a>
                 </li>
                 <li>
                     <a href=""><svg xmlns="http://www.w3.org/2000/svg"
@@ -113,17 +113,45 @@ if ($user) {
         </div>
     </div>
 
+    <!-- /////////////////////////////////////////////////////////////// -->
+    <!-- /////////////////////////////////////////////////////////////// -->
+
     <div class=" main-dashboard">
         <h1>Bem vindo, <strong><?= $user['nome'] ?><strong>!</h1>
         <div class="main-content">
             <div class="main-a">
+
+
                 <div class="nome-foto">
-                    <img src="assets/imgs/cuidadores/<?= $user['foto'] ?>" alt="foto do usuario">
-                    <div class="nome-text">
+                    <div class="d-flex justify-content-center">
+                        <?php if (empty($user['foto'])): ?>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                            </svg>
+                        <?php else: ?>
+                            <img src="assets/imgs/cuidadores/<?= $user['foto'] ?>"
+                                alt="Foto de perfil do usuário" width="120" height="120"
+                                class=" mt-1 rounded-circle">
+                        <?php endif; ?>
+                    </div>
+
+                    <div class="nome-text text-center">
                         <h3><?= $user['nome'] ?></h3>
                         <small>Cuidador</small>
                     </div>
                 </div>
+
+
+
+                <!-- <div class="nome-foto">
+                    <div class="d-flex justify-content-center">
+                    <img src="assets/imgs/cuidadores/<?= $user['foto'] ?>" alt="foto do usuario">
+                    <div class="nome-text text-center">
+                        <h3><?= $user['nome'] ?></h3>
+                        <small>Cuidador</small>
+                    </div>
+                </div> -->
                 <div class="sobre-mim">
                     <h3>Sobre mim</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate praesentium, cumque eos

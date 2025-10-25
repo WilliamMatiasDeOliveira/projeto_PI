@@ -52,6 +52,12 @@ CREATE TABLE IF NOT EXISTS especialidades(
 	nome_especialidade VARCHAR(255) NOT NULL
 );
 
+INSERT INTO especialidades (nome_especialidade) VALUES
+('banho'),
+('curativo'),
+('diaria'),
+('pernoite');
+
 CREATE TABLE IF NOT EXISTS cuidador_especialidade(
 	cuidador_id BIGINT UNSIGNED,
 	especialidade_id BIGINT UNSIGNED

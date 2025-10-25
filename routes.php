@@ -2,6 +2,7 @@
 
 use App\Controllers\ClienteController;
 use App\Controllers\CuidadorController;
+use App\Controllers\EspecialidadeController;
 use App\Controllers\MainController;
 use App\Controllers\ForgotPasswordController;
 use App\Controllers\LoginController;
@@ -50,6 +51,24 @@ switch ($url) {
         break;
     case "/logout":
         LogoutController::logout();
+        break;
+    case "/cad-especialidade":
+        MainController::cad_especialidade();
+        break;
+    case "/cad-especialidade-submit":
+        EspecialidadeController::cad_especialidade_submit();
+        break;
+
+
+
+
+
+
+
+
+
+    case "/buscar-cuidador":
+        MainController::buscar_cuidador();
         break;
 
 

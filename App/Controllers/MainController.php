@@ -47,4 +47,21 @@ class MainController{
     public static function dashboard_cuidador(){
         require_once VIEWS."/dashboard-cuidador.php";
     }
+
+    public static function cad_especialidade(){
+        require_once VIEWS."/cad-especialidade.php";
+    }
+
+
+
+
+
+
+
+
+
+
+    public static function buscar_cuidador(){
+        require_once VIEWS."/buscar-cuidador.php";
+    }
 }

@@ -33,7 +33,7 @@ if ($user) {
             </div>
             <ul class="list-unstyled components">
                 <li>
-                    <a href=""> <svg xmlns="http://www.w3.org/2000/svg"
+                    <a href="/projeto_PI/dashboard-cliente"> <svg xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                             <path
                                 d="M463 448.2C440.9 409.8 399.4 384 352 384L288 384C240.6 384 199.1 409.8 177 448.2C212.2 487.4 263.2 512 320 512C376.8 512 427.8 487.3 463 448.2zM64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320zM320 336C359.8 336 392 303.8 392 264C392 224.2 359.8 192 320 192C280.2 192 248 224.2 248 264C248 303.8 280.2 336 320 336z"
@@ -41,7 +41,7 @@ if ($user) {
                         </svg> Perfil</a>
                 </li>
                 <li>
-                    <a href="/projeto_PI/logout
+                    <a href="/projeto_PI/buscar-cuidador
                         "><svg xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                             <path
@@ -49,14 +49,7 @@ if ($user) {
                                 fill="currentColor" />
                         </svg> Buscar Cuidadores</a>
                 </li>
-                <li>
-                    <a href=""><svg xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-                            <path
-                                d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM288 224C288 206.3 302.3 192 320 192C337.7 192 352 206.3 352 224C352 241.7 337.7 256 320 256C302.3 256 288 241.7 288 224zM280 288L328 288C341.3 288 352 298.7 352 312L352 400L360 400C373.3 400 384 410.7 384 424C384 437.3 373.3 448 360 448L280 448C266.7 448 256 437.3 256 424C256 410.7 266.7 400 280 400L304 400L304 336L280 336C266.7 336 256 325.3 256 312C256 298.7 266.7 288 280 288z"
-                                fill="currentColor" />
-                        </svg> Informações</a>
-                </li>
+
                 <li>
                     <a href=""> <svg xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
@@ -89,7 +82,7 @@ if ($user) {
         <div class="sidebar-baixo  d-flex align-items-center">
             <a class="sidebar-perfil">
                 <?php if (empty($user['foto'])): ?>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor"
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
                         class="bi bi-person-circle mt-1" viewBox="0 0 16 16">
                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
                         <path fill-rule="evenodd"
@@ -109,31 +102,12 @@ if ($user) {
 
 
 
-
-
-
-        <!-- <div class="sidebar-baixo flex-collumn align-items-center">
-            <a class="sidebar-perfil">
-                <div class="">
-                    <?php if (empty($user['foto'])): ?>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-                        </svg>
-                    <?php else: ?>
-                        <img src="assets/imgs/clientes/<?= $user['foto'] ?>"
-                            alt="Foto de perfil do usuário" width="40" height="40"
-                            class=" mt-1 rounded-circle">
-                    <?php endif; ?>
-                </div>
-                <div class="sidebar-nome">
-                    <p><?= $user['nome'] ?></p>
-                </div>
-            </a>
-        </div> -->
-
-
     </div>
+
+
+
+    <!-- ////////////////////////////////////////////////////////////////////////// -->
+    <!-- ////////////////////////////////////////////////////////////////////////// -->
 
     <div class=" main-dashboard">
         <h1>Bem vindo, <strong><?= $user['nome'] ?><strong>!</h1>
@@ -153,7 +127,7 @@ if ($user) {
                         <?php endif; ?>
                     </div>
 
-                    <div class="nome-text">
+                    <div class="nome-text text-center">
                         <h3><?= $user['nome'] ?></h3>
                         <small>Cliente</small>
                     </div>
