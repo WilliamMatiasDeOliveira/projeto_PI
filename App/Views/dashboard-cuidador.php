@@ -142,16 +142,6 @@ if ($user) {
                     </div>
                 </div>
 
-
-
-                <!-- <div class="nome-foto">
-                    <div class="d-flex justify-content-center">
-                    <img src="assets/imgs/cuidadores/<?= $user['foto'] ?>" alt="foto do usuario">
-                    <div class="nome-text text-center">
-                        <h3><?= $user['nome'] ?></h3>
-                        <small>Cuidador</small>
-                    </div>
-                </div> -->
                 <div class="sobre-mim">
                     <h3>Sobre mim</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate praesentium, cumque eos

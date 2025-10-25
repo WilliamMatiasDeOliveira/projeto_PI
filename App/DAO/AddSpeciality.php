@@ -27,6 +27,7 @@ class AddSpeciality extends Connection{
             VALUES($cuidador_id, $especialidade_id)";
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute();
+            return true;
         }
 
     }

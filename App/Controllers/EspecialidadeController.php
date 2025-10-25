@@ -39,8 +39,11 @@ class EspecialidadeController
                 }
 
                 $adicionar_especialidade = new AddSpeciality();
+                // verifica se esta especialidade já foi cadastrada pello cuidador
                 $checkIfExistsSpecialitys = $adicionar_especialidade->add_speciality($user['id_cuidador'], $especialidade_id);
 
+                // se o cuidador já tem cadastrada esta especialidade
+                // retorna a menssagem 
                 if (!$checkIfExistsSpecialitys) {
                     $_SESSION['check_if_exists_specialitys'] = "Esta especialidade já esta cadastrada !";
                     header("Location: /projeto_PI/cad-especialidade");
@@ -49,7 +52,7 @@ class EspecialidadeController
 
                 // Caso tudo ocorra sem erros redireciona para a pagina cad-especialidade.php
                 // com uma menssagem dfe sucesso
-                $_SESSION['success_cad_speciality'] = "Especialidade cadastrada com sucesso !";
+                $_SESSION['success_add_speciality'] = "Especialidade cadastrada com sucesso !";
                 header("Location: /projeto_PI/cad-especialidade");
                 exit;
             }
