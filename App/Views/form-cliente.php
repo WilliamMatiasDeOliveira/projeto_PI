@@ -189,7 +189,6 @@ if(isset($_SESSION['old'])){
 <script>
 
     // função para integrar a api viaCep ao form
-
     // trecho para esperar o dom carregar
     document.addEventListener('DOMContentLoaded', () => {
         const cepInput = document.getElementById('cep');
@@ -231,7 +230,6 @@ if(isset($_SESSION['old'])){
     });
 
     // função para as menssagens com alert sumam
-
     // trecho para esperar o DOM carregar
     document.addEventListener("DOMContentLoaded", () => {
         // Seleciona todos os elementos com a classe alert

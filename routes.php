@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\BuscarCuidadorController;
 use App\Controllers\ClienteController;
 use App\Controllers\CuidadorController;
 use App\Controllers\EspecialidadeController;
@@ -58,18 +59,15 @@ switch ($url) {
     case "/cad-especialidade-submit":
         EspecialidadeController::cad_especialidade_submit();
         break;
-
-
-
-
-
-
-
-
-
     case "/buscar-cuidador":
         MainController::buscar_cuidador();
         break;
+        case "buscar-cuidador-submit":
+            // BuscarCuidadorController
+        break;
+        case "/buscar-cuidador-submit":
+            BuscarCuidadorController::buscar_cuidador_submit();
+            break;
 
 
 

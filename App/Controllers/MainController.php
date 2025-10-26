@@ -20,14 +20,6 @@ class MainController{
         require_once VIEWS."/form-cuidador.php";
     }
 
-    public static function forgot_password(){
-        require_once VIEWS."/forgot_password.php";
-    }
-
-    public static function reset_password(){
-        require_once VIEWS."/reset_password.php";
-    }
-
     public static function cadastro(){
         require_once VIEWS."/cadastro.php";
     }
@@ -52,16 +44,25 @@ class MainController{
         require_once VIEWS."/cad-especialidade.php";
     }
 
-
-
-
-
-
-
-
-
-
     public static function buscar_cuidador(){
         require_once VIEWS."/buscar-cuidador.php";
+    }
+
+
+
+
+
+
+
+    // //////////////////////////////////////////////////////////
+    // Metodos exclisivos para recuperação de senha
+    // /////////////////////////////////////////////////////////
+
+    public static function forgot_password(){
+        require_once VIEWS."/forgot_password.php";
+    }
+
+    public static function reset_password(){
+        require_once VIEWS."/reset_password.php";
     }
 }

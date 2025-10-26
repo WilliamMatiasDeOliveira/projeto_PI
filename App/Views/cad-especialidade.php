@@ -110,6 +110,8 @@ $especialidades = $_SESSION['all_specialitys'];
             </form>
         </div>
     </div>
+
+    
 </div>
 
 
