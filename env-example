@@ -1,0 +1,15 @@
+APP_NAME="Projeto PI"
+APP_ENV=local
+
+DB_HOST=localhost
+DB_NAME=nome_do_banco
+DB_USER=usuario
+DB_PASS=password
+
+SMTP_HOST=seu_host_email
+SMTP_USER=email_da_empresa
+SMTP_PASS=sua_senha_app
+SMTP_PORT=587
+SMTP_SECURE=tls
+SMTP_FROM=email_de_destino
+SMTP_FROM_NAME=nome_da_empresa
