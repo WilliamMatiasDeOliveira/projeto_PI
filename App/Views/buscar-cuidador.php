@@ -81,7 +81,7 @@ if (isset($_SESSION['cuidadores'])) {
               </a>
             </p>
 
-            <a href="assets/imgs/curriculos/<?= $cuidador['curriculo'] ?>" class="btn btn-primary form-control"target="_blank">Curriculo</a>
+            <a href="assets/imgs/curriculos/<?= $cuidador['curriculo'] ?>" class="btn btn-primary form-control" target="_blank">Curriculo</a>
           </div>
         </div>
 
