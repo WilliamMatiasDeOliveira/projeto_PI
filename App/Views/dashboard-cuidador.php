@@ -151,7 +151,7 @@ if ($user) {
 
             </div>
             <div class="main-b">
-                <h2>Informações do Úsuario:</h2>
+                <h3>Informações do Úsuario:</h3>
                 <ul>
                     <h4>
                         <svg xmlns="http://www.w3.org/2000/svg"
