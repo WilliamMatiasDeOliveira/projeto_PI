@@ -700,7 +700,7 @@ PAGINA CONTATOS
 .sidebar-dashboard {
     top: 0;
     left: 0;
-    width: 260px;
+    min-width: 280px;
     background-color: var(--preto2);
 
     display: flex;
@@ -759,24 +759,35 @@ PAGINA CONTATOS
 .sidebar-perfil {
     display: flex;
     align-items: center;
-    padding: 1rem 0;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
+
+.sidebar-perfil img,
+.sidebar-perfil svg {
+    width: 45px;
+    height: 45px;
+    margin: 0;
+    margin-right: 0.5rem;
+}
+
+.sidebar-perfil img {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.sidebar-nome {
+    flex: 1;
+    display: flex;
+    align-items: center;
 }
 
 .sidebar-nome p {
     margin: 0;
-    font-weight: 600;
 }
 
 .sidebar-baixo {
     border-top: var(--branco) 1.5px solid;
-}
-
-.sidebar-perfil img {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 0.5rem;
 }
 
 /* ! Main */
@@ -986,6 +997,172 @@ PAGINA CONTATOS
 .botoes-celular {
     display: none;
 }
+
+
+/* 
+======================================================================================================
+ ! DASHBOARD - ESPECIALIDADES
+====================================================================================================== 
+*/
+.especialidade-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    background-color: var(--branco);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+
+    max-width: 1400px;
+    width: 100%;
+    padding: 2rem;
+    gap: 1rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.especialidade-text {
+    width: 100%;
+    text-align: left;
+}
+
+.especialidade-text h2,
+.especialidade-text p {
+    margin: 0;
+}
+
+.especialidade-scroll {
+    overflow-y: auto;
+
+    max-width: 1100px;
+    max-height: 360px;
+
+    width: 100%;
+    min-height: 240px;
+
+    overflow-y: auto;
+
+    box-shadow: var(--shadow);
+    background-color: var(--branco2);
+    border-radius: 10px;
+}
+
+.especialidade-list {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: flex-start;
+    gap: 10px;
+
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.item-especialidade {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: var(--azul-medio);
+    margin: 0;
+    padding: 0.5rem;
+    border-radius: 30px;
+    min-width: 150px;
+}
+
+.especialidade-nome {
+    flex: 1;
+}
+
+.especialidade-remove {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--preto2);
+    width: 20px;
+    height: 20px;
+    line-height: 0;
+
+    background-color: var(--branco);
+    border-radius: 50%;
+}
+
+.item-especialidade:hover {
+    background-color: var(--azul-escuro);
+    cursor: pointer;
+}
+
+.item-especialidade:hover .especialidade-remove {
+    color: var(--preto);
+}
+
+
+.especialidade-adicionar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+/* .especialidade-group-text {
+} */
+
+.especialidade-group-text p {
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+
+.especialidade-scroll-horizontal {
+    overflow-x: auto;
+
+    max-width: 900px;
+
+    width: 100%;
+    min-height: 60px;
+
+    overflow-x: auto;
+
+    box-shadow: var(--shadow);
+    background-color: var(--branco2);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+
+}
+
+.especialidade-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.especialidade-group button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--azul-medio);
+    margin: 0;
+    padding: 0.5rem;
+    border-radius: 30px;
+    min-width: 120px;
+}
+
+.especialidade-group button:hover {
+    background-color: var(--azul-escuro);
+    cursor: pointer;
+}
+
+
+
 
 /* ======================================================================================================
  PAGINA SOBRE-NOS
