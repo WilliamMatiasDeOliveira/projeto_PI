@@ -113,21 +113,35 @@ if (isset($_SESSION['novas_propostas'])) {
             <input type="submit" class="btn btn-primary px-3" value="Sair">
           </form>
 
-          <!-- icone do sininho -->
+
+          <!-- Ícone do sininho -->
           <?php if ($user['tipo'] === 'cuidador'): ?>
-            <a href="/projeto_PI/ver-propostas">
-              <div class="d-flex justify-content-end align-items-center">
-                <div class="position-relative">
-                  <i class="bi bi-bell-fill fs-3 text-primary" id="iconeNotificacao"></i>
-                  <?php if (!empty($novasPropostas)): ?>
+            <div class="d-flex justify-content-end align-items-center">
+              <div class="position-relative">
+                <?php if (!empty($novasPropostas)): ?>
+                  <!-- Se tiver propostas, o sininho vira link -->
+                  <a href="/projeto_PI/ver-propostas" class="text-decoration-none text-primary">
+                    <i class="bi bi-bell-fill fs-3" id="iconeNotificacao"></i>
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                       <?= count($novasPropostas) ?>
                     </span>
-                  <?php endif; ?>
-                </div>
+                  </a>
+                <?php else: ?>
+                  <!-- Se não tiver, só mostra o ícone (sem link) -->
+                  <i class="bi bi-bell-fill fs-3 text-secondary" id="iconeNotificacao" title="Sem novas propostas"></i>
+                <?php endif; ?>
               </div>
-            </a>
+            </div>
           <?php endif; ?>
+
+
+
+
+
+
+
+
+
 
         <?php else: ?>
           <a href="/projeto_PI/login" class="btn btn-outline-primary px-3">Entrar</a>
