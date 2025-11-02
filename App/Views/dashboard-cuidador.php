@@ -117,7 +117,7 @@ if ($user) {
     <!-- /////////////////////////////////////////////////////////////// -->
 
     <div class=" main-dashboard">
-        <h1>Bem vindo, <strong><?= $user['nome'] ?><strong>!</h1>
+        <h1>Bem vindo, <strong><?= ucwords($user['nome']) ?><strong>!</h1>
         <div class="main-content">
             <div class="main-a">
 

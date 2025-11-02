@@ -2,6 +2,9 @@
 if (isset($_SESSION['user'])) {
   $user = $_SESSION['user'];
 }
+if (isset($_SESSION['novas_propostas'])) {
+  $novas_propostas = $_SESSION['novas_propostas'];
+}
 ?>
 
 <style>
@@ -96,27 +99,35 @@ if (isset($_SESSION['user'])) {
         </li>
       </ul>
 
-      <!-- BOTÕES
-        <div class="d-flex gap-2">
-          <a href="/projeto_PI/login" class="btn btn-outline-primary px-3">Entrar</a>
-          <a href="/projeto_PI/cadastro" class="btn btn-primary px-3">Cadastrar</a>
-        </div> -->
-
-         <!-- BOTÕES -->
+      <!-- BOTÕES -->
       <div class="d-flex gap-2">
         <?php if (isset($user['tipo'])): ?>
           <?php if ($user['tipo'] === 'cliente'): ?>
             <a href="/projeto_PI/dashboard-cliente" class="btn btn-outline-primary px-3">Perfil</a>
           <?php else: ?>
             <a href="/projeto_PI/dashboard-cuidador" class="btn btn-outline-primary px-3">Perfil</a>
+
           <?php endif; ?>
-          <!-- <a href="/projeto_PI/logout" class="btn btn-primary px-3">Sair</a> -->
 
-            <form action="/projeto_PI/logout" method="post">
-              <input type="submit"class="btn btn-primary px-3"value="Sair">
-            </form>
+          <form action="/projeto_PI/logout" method="post">
+            <input type="submit" class="btn btn-primary px-3" value="Sair">
+          </form>
 
-
+          <!-- icone do sininho -->
+          <?php if ($user['tipo'] === 'cuidador'): ?>
+            <a href="/projeto_PI/ver-propostas">
+              <div class="d-flex justify-content-end align-items-center">
+                <div class="position-relative">
+                  <i class="bi bi-bell-fill fs-3 text-primary" id="iconeNotificacao"></i>
+                  <?php if (!empty($novasPropostas)): ?>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                      <?= count($novasPropostas) ?>
+                    </span>
+                  <?php endif; ?>
+                </div>
+              </div>
+            </a>
+          <?php endif; ?>
 
         <?php else: ?>
           <a href="/projeto_PI/login" class="btn btn-outline-primary px-3">Entrar</a>

@@ -4,10 +4,11 @@ use App\Controllers\BuscarCuidadorController;
 use App\Controllers\ClienteController;
 use App\Controllers\CuidadorController;
 use App\Controllers\EspecialidadeController;
-use App\Controllers\MainController;
 use App\Controllers\ForgotPasswordController;
 use App\Controllers\LoginController;
 use App\Controllers\LogoutController;
+use App\Controllers\MainController;
+use App\Controllers\PropostaController;
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $url = str_replace("/projeto_PI", "", $url);
@@ -22,7 +23,7 @@ switch ($url) {
         break;
     case "/login-submit":
         LoginController::login_submit();
-        break; 
+        break;
     case "/form-cliente":
         MainController::form_cliente();
         break;
@@ -62,12 +63,21 @@ switch ($url) {
     case "/buscar-cuidador":
         MainController::buscar_cuidador();
         break;
-        case "buscar-cuidador-submit":
-            // BuscarCuidadorController
+    case "/buscar-cuidador-submit":
+        BuscarCuidadorController::buscar_cuidador_submit();
         break;
-        case "/buscar-cuidador-submit":
-            BuscarCuidadorController::buscar_cuidador_submit();
-            break;
+    case "/proposta":
+        MainController::proposta();
+        break;
+    case "/enviar-proposta":
+        PropostaController::enviar_proposta();
+        break;
+    case "/ver-propostas":
+        MainController::ver_propostas();
+        break;
+    case "/listar-propostas":
+        MainController::listar_propostas();
+        break;
 
 
 
@@ -75,11 +85,12 @@ switch ($url) {
 
 
 
-        // ===========================================================
-            // ROTAS EXCLUSIVAS PARA RECUPERAÇÃO DE SENHA
-        // ===========================================================
 
-         // Página com o campo de e-mail
+    // ===========================================================
+    // ROTAS EXCLUSIVAS PARA RECUPERAÇÃO DE SENHA
+    // ===========================================================
+
+    // Página com o campo de e-mail
     case "/forgot-password":
         MainController::forgot_password();
         break;
@@ -103,5 +114,3 @@ switch ($url) {
         echo "<h1>Página não encontrada (404)</h1>";
         break;
 }
-   
-

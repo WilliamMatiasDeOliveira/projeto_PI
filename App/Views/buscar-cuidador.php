@@ -15,14 +15,26 @@ if (isset($_SESSION['cuidadores'])) {
   $cuidadores = $_SESSION['cuidadores'];
   unset($_SESSION['cuidadores']);
 }
+// quando for enviada uma proposta para o cuidador
+if (isset($_SESSION['sucesso_proposta_enviada'])) {
+  $proposta_success = $_SESSION['sucesso_proposta_enviada'];
+  unset($_SESSION['sucesso_proposta_enviada']);
+}
 
 ?>
 
 <div class="container py-5">
 
+<!-- menssagem de alerta quando não existir cuidador cadastrado com a especialidade buscada  -->
   <?php if (isset($not_exists_cuidador_with_especiality)): ?>
     <div class="alert alert-danger">
       <?= $not_exists_cuidador_with_especiality ?>
+    </div>
+  <?php endif; ?>
+<!-- menssagem de sucesso quando for enviada uma proposta ao cuidador -->
+  <?php if (isset($proposta_success)): ?>
+    <div class="alert alert-success">
+      <?= $proposta_success ?>
     </div>
   <?php endif; ?>
 
@@ -59,8 +71,6 @@ if (isset($_SESSION['cuidadores'])) {
   </div>
 
 
-
-
   <?php if (isset($cuidadores)): ?>
 
     <?php foreach ($cuidadores as $cuidador): ?>
@@ -81,7 +91,9 @@ if (isset($_SESSION['cuidadores'])) {
               </a>
             </p>
 
-            <a href="assets/imgs/curriculos/<?= $cuidador['curriculo'] ?>" class="btn btn-primary form-control" target="_blank">Curriculo</a>
+            <a href="assets/imgs/curriculos/<?= $cuidador['curriculo'] ?>" class="btn btn-secondary form-control" target="_blank">Curriculo</a>
+
+            <a href="/projeto_PI/proposta?id_cuidador=<?= $cuidador['id_cuidador'] ?>"class="btn btn-primary form-control">Contratar</a>
           </div>
         </div>
 
