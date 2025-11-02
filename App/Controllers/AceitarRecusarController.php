@@ -27,9 +27,6 @@ class AceitarRecusarController
         $buscarEmailClienteDAO = new BuscarEmailClienteDAO();
         $emailCliente = $buscarEmailClienteDAO->buscarEmailCliente($cliente_id);
 
-        // print_r($emailCliente['email']);
-        // die();
-
         session_start();
         $user = $_SESSION['user'];
 
@@ -39,8 +36,8 @@ class AceitarRecusarController
         // Corpo do e-mail em HTML
         $body = "
             <h3><b>A sua proposta foi {$novo_status}</b></h3>
-            <p><b>Entre em contato com ele para acertar os detalhes do serviço</b></p>
-            <p><b>Email: {$emailCliente['email']}</b></p>
+            <p><b>Entre em contato com cuidador para acertar os detalhes do serviço</b></p>
+            <p><b>Email: {$user['email']}</b></p>
             <p><b>Telefone: {$telefone}</b></p>
         ";
 

@@ -6,6 +6,9 @@ require_once "Layouts/nav.php";
 if (isset($_SESSION['propostas'])) {
     $propostas = $_SESSION['propostas'];
     // unset($_SESSION['propostas']);
+
+    // echo "<pre>";
+    // print_r($propostas);
 }
 
 // array de nomes buscados pelo cliente_id
