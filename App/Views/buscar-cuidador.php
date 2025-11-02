@@ -82,15 +82,6 @@ if (isset($_SESSION['sucesso_proposta_enviada'])) {
           <div class="card-body">
             <h5 class="card-title"><?= $cuidador['nome'] ?></h5>
 
-            <p class="d-flex flex-column">
-              <a href="mailto:<?= $cuidador['email'] ?>" class="d-block text-light">
-                <?= $cuidador['email'] ?>
-              </a>
-              <a href="tel:<?= $cuidador['telefone'] ?>" class="d-block text-light">Tel:
-                <?= Helpers::formatarTelefone($cuidador['telefone']) ?>
-              </a>
-            </p>
-
             <a href="assets/imgs/curriculos/<?= $cuidador['curriculo'] ?>" class="btn btn-secondary form-control" target="_blank">Curriculo</a>
 
             <a href="/projeto_PI/proposta?id_cuidador=<?= $cuidador['id_cuidador'] ?>"class="btn btn-primary form-control">Contratar</a>

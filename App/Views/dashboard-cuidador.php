@@ -15,9 +15,17 @@ if ($user) {
     $dao = new GetAddressToUserInSession();
     $endereco = $dao->getEnderecoToUserInSession($user);
 }
+
+// se a resposta foi enviada ao cliente
+if (isset($_SESSION['sucesso_resposta_enviada'])) {
+    $sucesso_resposta_enviada = $_SESSION['sucesso_resposta_enviada'];
+    unset($_SESSION['sucesso_resposta_enviada']);
+}
 ?>
 
 <section class="dashboard-cuidador-container flexdashboard">
+
+
 
     <div class="sidebar-dashboard">
 
@@ -116,7 +124,17 @@ if ($user) {
     <!-- /////////////////////////////////////////////////////////////// -->
     <!-- /////////////////////////////////////////////////////////////// -->
 
+
+
     <div class=" main-dashboard">
+
+        <?php if (isset($sucesso_resposta_enviada)): ?>
+            <div class="alert alert-success">
+                <?= $sucesso_resposta_enviada ?>
+            </div>
+        <?php endif; ?>
+
+
         <h1>Bem vindo, <strong><?= ucwords($user['nome']) ?><strong>!</h1>
         <div class="main-content">
             <div class="main-a">
@@ -230,6 +248,29 @@ if ($user) {
 </section>
 
 
+<script>
+    // função para as menssagens com alert sumam
+
+    // trecho para esperar o DOM carregar
+    document.addEventListener("DOMContentLoaded", () => {
+        // Seleciona todos os elementos com a classe alert
+        const alerts = document.querySelectorAll(".alert");
+
+        // Define um tempo (3 segundos = 3000ms)
+        setTimeout(() => {
+            alerts.forEach(alert => {
+                // Adiciona uma transição suave antes de sumir
+                alert.style.transition = "opacity 0.5s ease";
+                alert.style.opacity = "0";
+
+                // Remove do DOM depois que a transição termina
+                setTimeout(() => {
+                    alert.remove();
+                }, 500);
+            });
+        }, 3000);
+    });
+</script>
 
 
 <?php
