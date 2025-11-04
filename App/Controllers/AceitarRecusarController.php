@@ -24,6 +24,12 @@ class AceitarRecusarController
         $aceitarRecusarDAO = new AceitarRecusarDAO();
         $aceitarRecusarDAO->mudar_status($novo_status, $servico);
 
+        if($novo_status === "aceito"){
+            $novo_status = "Aceita";
+        } else {
+            $novo_status = "Recusada";
+        }
+
         $buscarEmailClienteDAO = new BuscarEmailClienteDAO();
         $emailCliente = $buscarEmailClienteDAO->buscarEmailCliente($cliente_id);
 
@@ -34,24 +40,46 @@ class AceitarRecusarController
 
 
         // Corpo do e-mail em HTML
-        $body = "
-            <h3><b>A sua proposta foi {$novo_status}</b></h3>
-            <p><b>Entre em contato com cuidador para acertar os detalhes do serviço</b></p>
-            <p><b>Email: {$user['email']}</b></p>
-            <p><b>Telefone: {$telefone}</b></p>
-        ";
-
-        $subject = "Nova resposta recebida - Sistema Conecte";
-
-        $enviado = MailHelper::sendMail($emailCliente['email'], $subject, $body);
-
-        if (!$enviado) {
-            $_SESSION['erro_envio_resposta'] = "Ocorreu um erro ao enviar o e-mail tente novamente!";
+        if($acao === "aceitar"){
+            $body = "
+                <h3><b>A sua proposta foi {$novo_status}</b></h3>
+                <p><b>Entre em contato com cuidador para acertar os detalhes do serviço</b></p>
+                <p><b>Email: {$user['email']}</b></p>
+                <p><b>Telefone: {$telefone}</b></p>
+            ";
+    
+            $subject = "Nova resposta recebida - Sistema Conecte";
+    
+            $enviado = MailHelper::sendMail($emailCliente['email'], $subject, $body);
+           
+            if (!$enviado) {
+                $_SESSION['erro_envio_resposta'] = "Ocorreu um erro ao enviar o e-mail tente novamente!";
+            } else {
+                $_SESSION['sucesso_resposta_enviada'] = "Sua resposta foi enviada para o cliente.";
+            }
+    
+            header("Location: /projeto_PI/dashboard-cuidador");
+            exit;
         } else {
-            $_SESSION['sucesso_resposta_enviada'] = "Sua resposta foi enviada para o cliente.";
+            $body = "
+                <h3><b>A sua proposta foi {$novo_status}</b></h3>
+                <p><b>Tente outro cuidador na nossa plataforma !</b></p>
+            ";
+    
+            $subject = "Nova resposta recebida - Sistema Conecte";
+    
+            $enviado = MailHelper::sendMail($emailCliente['email'], $subject, $body);
+           
+            if (!$enviado) {
+                $_SESSION['erro_envio_resposta'] = "Ocorreu um erro ao enviar o e-mail tente novamente!";
+            } else {
+                $_SESSION['sucesso_resposta_enviada'] = "Sua resposta foi enviada para o cliente.";
+            }
+    
+            header("Location: /projeto_PI/dashboard-cuidador");
+            exit;
         }
+        
 
-        header("Location: /projeto_PI/dashboard-cuidador");
-        exit;
     }
 }

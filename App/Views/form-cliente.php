@@ -11,7 +11,7 @@ if (isset($_SESSION['erros'])) {
     unset($_SESSION['erros']);
 }
 
-if(isset($_SESSION['old'])){
+if (isset($_SESSION['old'])) {
     $old = $_SESSION['old'];
     unset($_SESSION['old']);
 }
@@ -50,7 +50,7 @@ if(isset($_SESSION['old'])){
             <div class="form-cliente-pessoal form">
                 <div>
                     <label for="nome">Nome</label>
-                    <input type="text" name="nome" id="nome" class="form-control"value="<?= $old['nome'] ?? "" ?>">
+                    <input type="text" name="nome" id="nome" class="form-control" value="<?= $old['nome'] ?? "" ?>">
                     <!-- erro -->
                     <?php if (isset($erros['nome'])): ?>
                         <div class="text-warning">
@@ -60,7 +60,7 @@ if(isset($_SESSION['old'])){
                 </div>
                 <div>
                     <label for="cpf">Cpf</label>
-                    <input type="text" name="cpf" id="cpf" class="form-control"value="<?= $old['cpf'] ?? "" ?>">
+                    <input type="text" name="cpf" id="cpf" class="form-control" value="<?= $old['cpf'] ?? "" ?>">
                     <!-- erro -->
                     <?php if (isset($erros['cpf'])): ?>
                         <div class="text-warning">
@@ -70,7 +70,7 @@ if(isset($_SESSION['old'])){
                 </div>
                 <div>
                     <label for="email">E-mail</label>
-                    <input type="email" name="email" id="email" class="form-control"value="<?= $old['email'] ?? "" ?>">
+                    <input type="email" name="email" id="email" class="form-control" value="<?= $old['email'] ?? "" ?>">
                     <!-- erro -->
                     <?php if (isset($erros['email'])): ?>
                         <div class="text-warning">
@@ -80,7 +80,7 @@ if(isset($_SESSION['old'])){
                 </div>
                 <div>
                     <label for="telefone">Telefone</label>
-                    <input type="text" name="telefone" id="telefone" class="form-control"value="<?= $old['telefone'] ?? "" ?>">
+                    <input type="text" name="telefone" id="telefone" class="form-control" value="<?= $old['telefone'] ?? "" ?>">
                     <!-- erro -->
                     <?php if (isset($erros['telefone'])): ?>
                         <div class="text-warning">
@@ -93,7 +93,7 @@ if(isset($_SESSION['old'])){
             <div class="form-cliente-endereco form">
                 <div>
                     <label for="cep">Cep</label>
-                    <input type="text" name="cep" id="cep" class="form-control"value="<?= $old['cep'] ?? "" ?>">
+                    <input type="text" name="cep" id="cep" class="form-control" value="<?= $old['cep'] ?? "" ?>">
                     <!-- erro -->
                     <?php if (isset($erros['cep'])): ?>
                         <div class="text-warning">
@@ -103,7 +103,7 @@ if(isset($_SESSION['old'])){
                 </div>
                 <div>
                     <label for="rua">Rua</label>
-                    <input type="text" name="rua" id="rua" class="form-control"value="<?= $old['rua'] ?? "" ?>">
+                    <input type="text" name="rua" id="rua" class="form-control" value="<?= $old['rua'] ?? "" ?>">
                     <!-- erro -->
                     <?php if (isset($erros['rua'])): ?>
                         <div class="text-warning">
@@ -113,7 +113,7 @@ if(isset($_SESSION['old'])){
                 </div>
                 <div>
                     <label for="cidade">Cidade</label>
-                    <input type="text" name="cidade" id="cidade" class="form-control"value="<?= $old['cidade'] ?? "" ?>">
+                    <input type="text" name="cidade" id="cidade" class="form-control" value="<?= $old['cidade'] ?? "" ?>">
                     <!-- erro -->
                     <?php if (isset($erros['cidade'])): ?>
                         <div class="text-warning">
@@ -123,7 +123,7 @@ if(isset($_SESSION['old'])){
                 </div>
                 <div>
                     <label for="bairro">Bairro</label>
-                    <input type="text" name="bairro" id="bairro" class="form-control"value="<?= $old['bairro'] ?? "" ?>">
+                    <input type="text" name="bairro" id="bairro" class="form-control" value="<?= $old['bairro'] ?? "" ?>">
                     <!-- erro -->
                     <?php if (isset($erros['bairro'])): ?>
                         <div class="text-warning">
@@ -179,15 +179,15 @@ if(isset($_SESSION['old'])){
             <div class="mt-4 ">
                 <input type="submit" class="btn btn-secondary form-control btn-cliente" value="Cadastrar-se">
             </div>
+        </form>
+    </section>
 </div>
 
-</form>
-</section>
+
 
 </div>
 
 <script>
-
     // função para integrar a api viaCep ao form
     // trecho para esperar o dom carregar
     document.addEventListener('DOMContentLoaded', () => {
@@ -249,7 +249,6 @@ if(isset($_SESSION['old'])){
             });
         }, 3000);
     });
-
 </script>
 
 

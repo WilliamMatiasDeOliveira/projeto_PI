@@ -1,6 +1,7 @@
 <?php
 
 use App\Controllers\AceitarRecusarController;
+use App\Controllers\AtualizarController;
 use App\Controllers\BuscarCuidadorController;
 use App\Controllers\ClienteController;
 use App\Controllers\CuidadorController;
@@ -81,6 +82,12 @@ switch ($url) {
         break;
     case "/aceitar-recusar":
         AceitarRecusarController::AceitarRecusar();
+        break;
+    case "/atualizar":
+        MainController::atualizar();
+        break;
+    case "/atualizar-submit":
+        AtualizarController::atualizar();
         break;
 
 

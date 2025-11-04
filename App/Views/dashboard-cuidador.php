@@ -241,7 +241,7 @@ if (isset($_SESSION['sucesso_resposta_enviada'])) {
                     <span>
                         <?= $endereco['rua'] ?></span>
                 </ul>
-                <a href="{{ route('update', encrypt(Auth::user()->id)) }}" class="btn btn-primary w-100">Atualizar
+                <a href=" /projeto_PI/atualizar" class="btn btn-primary w-100">Atualizar
                     Dados</a>
             </div>
         </div>

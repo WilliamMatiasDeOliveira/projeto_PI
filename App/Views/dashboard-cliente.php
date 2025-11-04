@@ -10,9 +10,9 @@ if (isset($_SESSION['user'])) {
 }
 
 if ($user) {
-    // função para buscar o endereco do usuario logado na sessão
-    $dao = new GetAddressToUserInSession();
-    $endereco = $dao->getEnderecoToUserInSession($user);
+    $enderecoUserSessao = new GetAddressToUserInSession();
+    $_SESSION['endereco'] = $enderecoUserSessao->getEnderecoToUserInSession($user);
+    $endereco = $_SESSION['endereco'];
 }
 
 ?>
@@ -212,7 +212,7 @@ if ($user) {
                     <span>
                         <?= $endereco['rua'] ?></span>
                 </ul>
-                <a href="{{ route('update', encrypt(Auth::user()->id)) }}" class="btn btn-primary w-100">Atualizar
+                <a href="/projeto_PI/atualizar" class="btn btn-primary w-100">Atualizar
                     Dados</a>
             </div>
         </div>

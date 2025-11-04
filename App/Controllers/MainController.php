@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 session_start();
 
+use App\DAO\GetAddressToUserInSession;
 use App\DAO\GetNameByIdDAO;
 use App\DAO\ServicoDAO;
 use App\DAO\VerPropostaDAO;
@@ -95,10 +96,10 @@ class MainController
         }
 
         $nomes = [];
-        foreach($nome_clientes as $cliente){
+        foreach ($nome_clientes as $cliente) {
             $buscarNomesPorId = new GetNameByIdDAO();
             // aki esta sendo feita a converssão de cliente_id pelo nome do cliente
-            $nomes[] = $buscarNomesPorId->getNameById($cliente); 
+            $nomes[] = $buscarNomesPorId->getNameById($cliente);
         }
 
         $_SESSION['nomes'] = $nomes;
@@ -113,9 +114,10 @@ class MainController
         require_once VIEWS . "/listar-propostas.php";
     }
 
-
-
-
+    public static function atualizar()
+    {
+        require_once VIEWS . "/atualizar.php";
+    }
 
 
 
