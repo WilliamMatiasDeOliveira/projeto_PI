@@ -89,8 +89,9 @@ switch ($url) {
     case "/atualizar-submit":
         AtualizarController::atualizar();
         break;
-
-
+    case "/atualizar-foto":
+        AtualizarController::atualizarFoto();
+        break;
 
 
 

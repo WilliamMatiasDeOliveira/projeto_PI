@@ -127,6 +127,14 @@ if ($user) {
                     </div>
 
                     <div class="nome-text text-center">
+
+                        <form action="/projeto_PI/atualizar-foto" method="post" enctype="multipart/form-data">
+                            <input type="file" name="foto" id="foto" required>
+                            <input type="hidden" name="tipo" value="cliente">
+                            <button type="submit">Enviar</button>
+                        </form>
+
+
                         <h3><?= $user['nome'] ?></h3>
                         <small>Cliente</small>
                     </div>
