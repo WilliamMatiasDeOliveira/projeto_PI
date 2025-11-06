@@ -190,7 +190,7 @@ Fonte: Elaborado pelos autores.
 
 ### 7.3 Modelo Lógico  
 
-![Modelo Entidade Relacionamento](Modelagens/documentacao/der_conecte.jpeg)
+![Modelo Entidade Relacionamento](Modelagens/documentacao/der_conecte.png)
 
 Fonte: Elaborado pelos autores.  
 <div align= "end"> 

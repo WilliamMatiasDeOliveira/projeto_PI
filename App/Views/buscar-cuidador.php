@@ -127,11 +127,21 @@ if (isset($_SESSION['sucesso_proposta_enviada'])) {
         </div>
 
         <div class="busca-categoria">
-          <div class="busca-categoria-text">
-            <h5>CategoriaNome</h5>
-          </div>
+          <button class="busca-categoria-text">
+            <svg class="seta" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Pro v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2025 Fonticons, Inc.-->
+              <path d="M355.2 85C348.2 72.1 334.7 64 320 64C305.3 64 291.8 72.1 284.8 85L68.8 485C62.1 497.4 62.4 512.4 69.6 524.5C76.8 536.6 89.9 544 104 544L536 544C550.1 544 563.1 536.6 570.4 524.5C577.7 512.4 577.9 497.4 571.2 485L355.2 85z"
+                fill="currentColor" />
+            </svg>
+            <h5>Pessoais</h5>
+          </button>
           <div class="busca-categoria-list">
-            <div class="busca-side-item">
+            <div class="busca-item">
+              <form action="/projeto_PI/buscar-cuidador-submit" method="post">
+                <input type="hidden" value="banho" name="especialidade">
+                <input type="submit" class="" value="Banho">
+              </form>
+            </div>
+            <div class="busca-item">
               <form action="/projeto_PI/buscar-cuidador-submit" method="post">
                 <input type="hidden" value="banho" name="especialidade">
                 <input type="submit" class="" value="Banho">
@@ -141,11 +151,21 @@ if (isset($_SESSION['sucesso_proposta_enviada'])) {
         </div>
 
         <div class="busca-categoria">
-          <div class="busca-categoria-text">
-            <h5>CategoriaNome</h5>
-          </div>
+          <button class="busca-categoria-text">
+            <svg class="seta" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Pro v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2025 Fonticons, Inc.-->
+              <path d="M355.2 85C348.2 72.1 334.7 64 320 64C305.3 64 291.8 72.1 284.8 85L68.8 485C62.1 497.4 62.4 512.4 69.6 524.5C76.8 536.6 89.9 544 104 544L536 544C550.1 544 563.1 536.6 570.4 524.5C577.7 512.4 577.9 497.4 571.2 485L355.2 85z"
+                fill="currentColor" />
+              <h5>Saúde</h5>
+          </button>
           <div class="busca-categoria-list">
-            <div class="busca-side-item">
+            <div class="busca-item">
+              <form action="/projeto_PI/buscar-cuidador-submit" method="post">
+                <input type="hidden" value="curativo" name="especialidade">
+                <input type="submit" class="" value="Curativo">
+              </form>
+
+            </div>
+            <div class="busca-item">
               <form action="/projeto_PI/buscar-cuidador-submit" method="post">
                 <input type="hidden" value="curativo" name="especialidade">
                 <input type="submit" class="" value="Curativo">
@@ -155,29 +175,50 @@ if (isset($_SESSION['sucesso_proposta_enviada'])) {
         </div>
 
         <div class="busca-categoria">
-          <div class="busca-categoria-text">
-            <h5>CategoriaNome</h5>
-          </div>
+          <button class="busca-categoria-text">
+            <svg class="seta" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Pro v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2025 Fonticons, Inc.-->
+              <path d="M355.2 85C348.2 72.1 334.7 64 320 64C305.3 64 291.8 72.1 284.8 85L68.8 485C62.1 497.4 62.4 512.4 69.6 524.5C76.8 536.6 89.9 544 104 544L536 544C550.1 544 563.1 536.6 570.4 524.5C577.7 512.4 577.9 497.4 571.2 485L355.2 85z"
+                fill="currentColor" />
+              <h5>Rotina</h5>
+          </button>
           <div class="busca-categoria-list">
-            <div class="busca-side-item">
+            <div class="busca-item">
               <form action="/projeto_PI/buscar-cuidador-submit" method="post">
                 <input type="hidden" value="diaria" name="especialidade">
                 <input type="submit" class="" value="Diária">
+              </form>
+            </div>
+            <div class="busca-item">
+              <form action="/projeto_PI/buscar-cuidador-submit" method="post">
+                <input type="hidden" value="pernoite" name="especialidade">
+                <input type="submit" class="" value="Pernoite">
               </form>
             </div>
           </div>
         </div>
 
         <div class="busca-categoria">
-          <div class="busca-categoria-text">
-            <h5>CategoriaNome</h5>
-          </div>
+          <button class="busca-categoria-text">
+            <svg class="seta" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Pro v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2025 Fonticons, Inc.-->
+              <path d="M355.2 85C348.2 72.1 334.7 64 320 64C305.3 64 291.8 72.1 284.8 85L68.8 485C62.1 497.4 62.4 512.4 69.6 524.5C76.8 536.6 89.9 544 104 544L536 544C550.1 544 563.1 536.6 570.4 524.5C577.7 512.4 577.9 497.4 571.2 485L355.2 85z"
+                fill="currentColor" />
+              <h5>Apoio</h5>
+          </button>
           <div class="busca-categoria-list">
-            <div class="busca-side-item">
-              <form action="/projeto_PI/buscar-cuidador-submit" method="post">
-                <input type="hidden" value="pernoite" name="especialidade">
-                <input type="submit" class="" value="Pernoite">
-              </form>
+            <div class="busca-item">
+            </div>
+          </div>
+        </div>
+
+        <div class="busca-categoria">
+          <button class="busca-categoria-text">
+            <svg class="seta" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Pro v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2025 Fonticons, Inc.-->
+              <path d="M355.2 85C348.2 72.1 334.7 64 320 64C305.3 64 291.8 72.1 284.8 85L68.8 485C62.1 497.4 62.4 512.4 69.6 524.5C76.8 536.6 89.9 544 104 544L536 544C550.1 544 563.1 536.6 570.4 524.5C577.7 512.4 577.9 497.4 571.2 485L355.2 85z"
+                fill="currentColor" />
+              <h5>Tarefas</h5>
+          </button>
+          <div class="busca-categoria-list">
+            <div class="busca-item">
             </div>
           </div>
         </div>
@@ -187,23 +228,29 @@ if (isset($_SESSION['sucesso_proposta_enviada'])) {
 
       <div class="busca-side-b">
         <div class="busca-cuidadores">
+
           <?php if (isset($cuidadores)): ?>
-
             <?php foreach ($cuidadores as $cuidador): ?>
-              <div class="card" style="width: 18rem;">
-                <img src="assets/imgs/cuidadores/<?= $cuidador['foto'] ?>" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title"><?= $cuidador['nome'] ?></h5>
 
-                  <a href="assets/imgs/curriculos/<?= $cuidador['curriculo'] ?>" class="btn btn-secondary form-control" target="_blank">Curriculo</a>
+              <div class="cuidador-card">
+                <div class="cuidador-foto">
+                  <img src="assets/imgs/cuidadores/<?= $cuidador['foto'] ?>" alt="...">
+                </div>
 
-                  <a href="/projeto_PI/proposta?id_cuidador=<?= $cuidador['id_cuidador'] ?>" class="btn btn-primary form-control">Contratar</a>
+                <div class="cuidador-body">
+
+                  <h4 class="cuidador-nome"><?= $cuidador['nome'] ?></h4>
+
+                  <div class="cuidador-actions">
+                    <a href="assets/imgs/curriculos/<?= $cuidador['curriculo'] ?>" class="btn-cv" target="_blank">Currículo</a>
+                    <a href="/projeto_PI/proposta?id_cuidador=<?= $cuidador['id_cuidador'] ?>" class="btn-contratar">Contratar</a>
+                  </div>
                 </div>
               </div>
+
             <?php endforeach; ?>
           <?php endif; ?>
         </div>
-
       </div>
 
 
@@ -217,20 +264,6 @@ if (isset($_SESSION['sucesso_proposta_enviada'])) {
 
 
 </div><!--fim container-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -256,6 +289,27 @@ if (isset($_SESSION['sucesso_proposta_enviada'])) {
         }, 500);
       });
     }, 3000);
+  });
+
+  document.querySelectorAll('.busca-categoria-text').forEach((header) => {
+    header.addEventListener('click', () => {
+      const list = header.nextElementSibling;
+
+      if (!list.classList.contains('open')) {
+        // abrir
+        list.style.height = list.scrollHeight + "px";
+        list.classList.add('open');
+        header.classList.add('active');
+      } else {
+        // fechar
+        list.style.height = list.scrollHeight + "px";
+        requestAnimationFrame(() => {
+          list.style.height = "0px";
+        });
+        list.classList.remove('open');
+        header.classList.remove('active');
+      }
+    });
   });
 </script>
 

@@ -651,7 +651,7 @@ PAGINA CONTATOS
     background-color: var(--azul-escuro);
     color: white;
     font-family: var(--font-destaque);
-    margin: 6rem auto;
+    margin: 1.5rem auto;
 }
 
 .form-login .links {
@@ -911,7 +911,6 @@ PAGINA CONTATOS
 
     .main-content {
         padding: 1.5rem;
-        margin: 1rem 0.5rem;
         flex-direction: column;
         align-items: center;
     }
@@ -1049,7 +1048,6 @@ PAGINA CONTATOS
 }
 
 .especialidade-list {
-
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -1106,7 +1104,6 @@ PAGINA CONTATOS
     display: flex;
     align-items: center;
     flex-direction: column;
-
 }
 
 /* .especialidade-group-text {
@@ -1161,12 +1158,340 @@ PAGINA CONTATOS
     cursor: pointer;
 }
 
+/*
+==================================================
+ESPECIALIDADE BUSCAR
+==================================================
+*/
+
+.busca-dashboard {
+    flex: 1;
+    padding: 2rem;
+    background-color: var(--branco2);
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.busca-content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    margin: 0 auto;
+    max-width: 1400px;
+    height: 100vh;
+    width: 100%;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.busca-side-a {
+    display: flex;
+    flex-direction: column;
+
+    width: 18%;
+    padding: 0.5rem;
+    background-color: var(--branco);
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: var(--shadow-lg);
+
+    overflow-y: auto;
+    max-height: 100vh;
+}
+
+.busca-side-a::-webkit-scrollbar {
+    width: 3px;
+}
+
+/* Trilha do scroll */
+.busca-side-a::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* A "barra" que se move */
+.busca-side-a::-webkit-scrollbar-thumb {
+    background: var(--azul-medio);
+    border-radius: 4px;
+}
+
+/* Hover do thumb */
+.busca-side-a::-webkit-scrollbar-thumb:hover {
+    background: var(--azul-claro);
+}
+
+
+.busca-side-a-text {
+    text-align: center;
+    color: var(--preto);
+}
+
+.busca-categoria {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.busca-categoria-text {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    margin-bottom: 2px;
+    padding: 5px;
+
+    border-radius: var(--radius);
+    background-color: transparent;
+
+    color: var(--preto2);
+    text-align: left;
+}
+
+.busca-categoria-text:hover {
+    background-color: var(--azul-claro);
+}
+
+.busca-categoria-text h5 {
+    margin: 0;
+}
+
+.seta {
+    display: inline-block;
+    transition: transform 0.35s ease;
+    font-size: 14px;
+
+    width: 14px;
+    height: 14px;
+
+    transform: rotate(-270deg);
+
+}
+
+.busca-categoria-text.active .seta {
+    transform: rotate(-180deg);
+
+}
+
+.busca-categoria-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    background-color: var(--branco2);
+
+    height: 0;
+    overflow: hidden;
+    transition: height 0.35s ease;
+}
+
+.busca-item {
+    display: flex;
+    flex: 1;
+
+    font-size: 1rem;
+
+    background-color: var(--branco);
+    border-left: 4px solid var(--azul-claro);
+
+    padding: 1px;
+    padding-left: 10px;
+}
+
+.busca-item:hover {
+    transition: 400ms;
+    background-color: var(--azul-claro);
+    border-left: 4px solid var(--azul-escuro);
+}
+
+.busca-item form {
+    width: 100%;
+}
+
+.busca-item input {
+    border: 0px;
+    background-color: transparent;
+}
+
+.busca-item input[type="submit"] {
+    width: 100%;
+    padding: 1px 0;
+    /* opcional, para deixar bonito */
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+    /* pra manter aquele visual de menu */
+}
+
+
+
+.busca-side-b {
+    display: flex;
+    flex-direction: row;
+
+    width: 80%;
+    padding: 0.5rem;
+    background-color: var(--branco);
+    border-radius: 0px 10px 10px 0px;
+    box-shadow: var(--shadow-lg);
+
+    max-height: 100vh;
+}
+
+.busca-cuidadores {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    gap: 15px;
+    padding: 10px;
+}
+
+.cuidador-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 320px;
+
+    gap: 10px;
+    padding: 10px;
+
+    background-color: var(--azul-claro);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.cuidador-card:hover {
+    transform: scale(1.05);
+}
+
+.cuidador-foto img {
+    min-width: 125px;
+    min-height: 125px;
+    width: 125px;
+    height: 125px;
+
+    background-color: var(--branco);
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.cuidador-body {
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* ------------------------- */
+
+.cuidador-nome {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.cuidador-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+}
+
+.btn-cv,
+.btn-contratar {
+    flex: 1;
+    padding: 8px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-cv {
+    background: var(--branco2);
+    color: #333;
+}
+
+.btn-contratar {
+    background: var(--azul-escuro);
+    color: #fff;
+}
+
+
+/* ================= MEDIA QUERY ================= */
+
+@media (max-width: 1024px) {
+    .busca-dashboard {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .busca-content {
+        flex-direction: column;
+        height: auto;
+        padding: 0;
+    }
+
+    .busca-side-a {
+        width: 100%;
+        max-height: auto;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+    }
+
+    .busca-side-b {
+        width: 100%;
+        max-height: auto;
+        border-radius: 10px;
+    }
+
+    .busca-cuidadores {
+        justify-content: center;
+    }
+
+    .cuidador-card {
+        width: 100%;
+        max-width: 600px;
+    }
+}
+
+/* Celular / Tablets pequenos */
+@media (max-width: 650px) {
+
+    .cuidador-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .cuidador-foto img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .cuidador-actions {
+        flex-direction: row;
+    }
+
+    .busca-side-a {
+        padding: 1rem;
+    }
+}
 
 
 
 /* ======================================================================================================
  PAGINA SOBRE-NOS
 ====================================================================================================== */
+
 .sobre-nos-container {
     display: flex;
     justify-content: center;
