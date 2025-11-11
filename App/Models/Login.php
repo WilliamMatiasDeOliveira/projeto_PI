@@ -2,22 +2,28 @@
 
 namespace App\Models;
 
-class Login{
+class Login
+{
     private string $email = "";
-    private string $senha = ""; 
+    private string $senha = "";
 
-    public function setEmail($email){
+    // GETTERS
+    public function setEmail($email)
+    {
         $this->email = $email;
     }
-    public function getEmail(){
+    public function getEmail()
+    {
         return $this->email;
     }
 
-
-    public function setSenha($senha){
+    // SETTERS
+    public function setSenha($senha)
+    {
         $this->senha = $senha;
     }
-    public function getSenha(){
+    public function getSenha()
+    {
         return $this->senha;
     }
 }

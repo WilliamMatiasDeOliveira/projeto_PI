@@ -5,15 +5,22 @@ use App\DAO\GetAddressToUserInSession;
 require_once "Layouts/header.php";
 require_once "Layouts/nav.php";
 
+    // echo "<pre>";
+    //     print_r($_SESSION['user']);
+    //     die();
+
 
 if (isset($_SESSION['user'])) {
     $user = $_SESSION['user'];
 }
 
+// echo "<pre>";
+// print_r($user['foto']);
+
 if ($user) {
-    // função para buscar o endereco do usuario logado na sessão
-    $dao = new GetAddressToUserInSession();
-    $endereco = $dao->getEnderecoToUserInSession($user);
+    $enderecoUserSessao = new GetAddressToUserInSession();
+    $_SESSION['endereco'] = $enderecoUserSessao->getEnderecoToUserInSession($user);
+    $endereco = $_SESSION['endereco'];
 }
 
 // se a resposta foi enviada ao cliente
@@ -104,7 +111,7 @@ if (isset($_SESSION['sucesso_resposta_enviada'])) {
         </div>
         <div class="sidebar-baixo">
             <a class="sidebar-perfil">
-                <?php if ($user['foto'] === null): ?>
+                <?php if (empty($user['foto'])): ?>
                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
                         class="bi bi-person-square mx-auto mt-1" viewBox="0 0 16 16">
                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
@@ -139,6 +146,12 @@ if (isset($_SESSION['sucesso_resposta_enviada'])) {
         <div class="main-content">
             <div class="main-a">
 
+            <?php
+            // echo "<pre>";
+            // print_r($user['foto']);
+            // die();
+            
+            ?>
 
                 <div class="nome-foto">
                     <div class="d-flex justify-content-center">

@@ -14,7 +14,7 @@ class MainController
 
     public static function home()
     {
-        require_once __DIR__ . "/../Views/home.php";
+        require_once VIEWS . "/home.php";
     }
 
     public static function login()

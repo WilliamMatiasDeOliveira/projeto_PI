@@ -87,7 +87,7 @@ switch ($url) {
         MainController::atualizar();
         break;
     case "/atualizar-submit":
-        AtualizarController::atualizar();
+        AtualizarController::atualizar_submit();
         break;
 
 

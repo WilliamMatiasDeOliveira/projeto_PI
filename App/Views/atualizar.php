@@ -11,11 +11,16 @@ if (isset($_SESSION['user'])) {
 }
 
 $id = "";
+$tipo = "";
 
-if($user['tipo'] === "cliente"){
+if ($user['tipo'] === "cliente") {
     $id = $user['id_cliente'];
+    $tipo = "cliente";
+    $user['id_cliente'] = $id;
 } else {
     $id = $user['id_cuidador'];
+    $tipo = "cuidador";
+    $user['id_cuidador'] = $id;
 }
 
 ?>
@@ -31,6 +36,7 @@ if($user['tipo'] === "cliente"){
         <form action="/projeto_PI/atualizar-submit" method="post" enctype="multipart/form-data">
 
             <input type="hidden" name="id" value="<?= $id ?>">
+            <input type="hidden" name="tipo" value="<?= $tipo ?>">
 
             <div class="form-cliente-pessoal form">
                 <div>
@@ -117,6 +123,23 @@ if($user['tipo'] === "cliente"){
                     <?php endif; ?>
                 </div>
 
+            </div>
+
+            <div>
+                <!-- <img src="assets/imgs/clientes/<?= $user['foto'] ?>"> -->
+            </div>
+
+            <div class="form-cliente-fim form">
+                <div class="form-cliente-foto">
+                    <label for="foto">Alterar Foto</label>
+                    <input type="file" name="foto" class="form-control" placeholder="jpg, jpeg, png">
+                    <!-- erro -->
+                    <?php if (isset($erros['foto_invalida'])): ?>
+                        <div class="text-warning">
+                            <?= $erros['foto_invalida'] ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
             </div>
 
             <div class="mt-4 ">
