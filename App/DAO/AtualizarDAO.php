@@ -17,16 +17,8 @@ class AtualizarDAO extends Connection
             $endereco = $_SESSION['endereco'];
         }
 
-        // echo $user['tipo'];
-        // die();
-
         try {
             $this->pdo->beginTransaction();
-
-            // echo "<pre>";
-            // print_r($_SESSION['user']);
-            // die();
-
 
             if ($user['tipo'] === 'cliente') {
                 //  Atualiza dados do usuário se for cliente
@@ -56,11 +48,6 @@ class AtualizarDAO extends Connection
                 foto = :foto,
                 curriculo = :curriculo
                 WHERE " . ($tabela === 'clientes' ? 'id_cliente' : 'id_cuidador') . " = :id";
-
-                // echo "<pre>";
-                // echo "user array";
-                // print_r($user);
-                // die();
 
                 $stmt = $this->pdo->prepare($sqlUser);
                 $stmt->bindValue(":nome", $user['nome']);
