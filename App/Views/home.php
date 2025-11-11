@@ -22,13 +22,13 @@ require_once "Layouts/nav.php";
     </div>
 </div>
 
-<section class="sobre">
-    <div class="sobre-img">
+<section class="home-sobre">
+    <div class="home-sobre-img">
         <div>
             <img src="assets/imgs/1.png" alt="Sobre 2">
         </div>
     </div>
-    <div class="sobre-info">
+    <div class="home-sobre-info">
         <h1>Quem somos nós?</h1>
         <p>No <strong>Conecte Cuidadores</strong>, acreditamos que todos merecem cuidado e atenção de qualidade.
             Nossa plataforma nasceu com um propósito simples: <strong>aproximar cuidadores experientes de pessoas

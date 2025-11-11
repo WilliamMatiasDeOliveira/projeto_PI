@@ -228,7 +228,7 @@ footer .apoio img {
 ==================================================
 */
 
-.sobre {
+.home-sobre {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -240,14 +240,14 @@ footer .apoio img {
     margin-top: 2.5rem;
 }
 
-.sobre .sobre-info {
+.home-sobre .home-sobre-info {
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.sobre .sobre-info h1 {
+.home-sobre .home-sobre-info h1 {
     font-family: var(--font-destaque);
     font-weight: 600;
     font-size: 3rem;
@@ -256,27 +256,27 @@ footer .apoio img {
     margin-bottom: 2rem;
 }
 
-.sobre .sobre-info p {
+.home-sobre .home-sobre-info p {
     font-size: 1.2rem;
     text-align: justify;
 }
 
-.sobre .sobre-info p strong {
+.home-sobre .sobre-info p strong {
     color: var(--azul-escuro);
 }
 
-.sobre .sobre-img {
+.home-sobre .home-sobre-img {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 50%;
 }
 
-.sobre .sobre-img div {
+.home-sobre .home-sobre-img div {
     text-align: center;
 }
 
-.sobre .sobre-img img {
+.home-sobre .home-sobre-img img {
     border-radius: var(--radius);
     width: 75%;
 }
@@ -1494,58 +1494,231 @@ ESPECIALIDADE BUSCAR
 
 .sobre-nos-container {
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 3.4rem;
+    justify-content: space-between;
+    flex-direction: column;
+
 }
 
-.card {
-    margin: 2rem 0 2rem 0;
-}
-
-.card-title {
-    text-align: center
-}
-
-.card-text {
+.sobre {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
     align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 1rem;
+
+    margin-top: 4rem;
+    margin-bottom: 2rem;
 }
 
-.card-text a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-}
+.colaboradores {
+    width: 100%;
 
-.card-img-top {
-    max-height: 16rem;
-}
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
 
-.text-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: justify;
-    width: 83%;
-    margin: 0 auto;
+    gap: 20px;
+
+    padding-bottom: 4rem;
+    background-color: var(--branco2);
 }
 
+.titulo-colaboradores {
+    margin-top: 2rem;
+}
 
-.text-container h1 {
+.card-sobre-nos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    background: var(--branco);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: transform .3s ease;
+    width: 800px;
+}
+
+.card-sobre-nos:hover {
+    transform: translateY(-4px);
+}
+
+.card-sobre-nos .perfil img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--azul-medio);
+}
+
+.card-sobre-nos .info {
+    flex: 1;
+}
+
+.texto-projeto {
+    width: 80%;
+    max-width: 900px;
+    text-align: center;
+}
+
+.texto-projeto p {
+    line-height: 1.6;
+    color: #444;
+}
+
+.card-sobre-nos .info h3 {
+    font-size: 1.7rem;
+    margin-bottom: .6rem;
+    font-weight: 600;
+}
+
+.card-sobre-nos .info p {
+    color: var(--preto2);
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+    max-width: 550px;
+}
+
+.card-sobre-nos .links {
+    display: flex;
+    gap: 1rem;
+}
+
+.card-sobre-nos .links a {
+    text-decoration: none;
+    padding: .6rem 1.2rem;
+    border-radius: var(--radius);
+    background-color: var(--branco);
+    border: 1px solid var(--azul-escuro);
     color: var(--azul-escuro);
-    font-size: 4rem;
-    margin-top: 2rem
+    transition: 0.3s ease;
+    font-weight: 500;
 }
 
-.text-container p {
-    font-size: 1.2rem;
+.card-sobre-nos .links a:hover {
+    background: var(--azul-escuro);
+    color: #fff;
 }
 
-/* ======================================================================================================================================================
+.card-sobre-nos.invertido {
+    flex-direction: row-reverse;
+}
+
+.card-sobre-nos.invertido .info {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.card-sobre-nos.invertido .links {
+    justify-content: flex-end;
+}
+
+.card-sobre-nos.invertido {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+}
+
+.card-sobre-nos.invertido .info {
+    text-align: right;
+    align-items: flex-end;
+}
+
+.mvv {
+    width: 85%;
+    max-width: 1100px;
+}
+
+.mvv-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.mvv-item {
+    flex: 1;
+    min-width: 280px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.mvv-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+.mvv-icon {
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+}
+
+.mvv-icon svg {
+    width: 60px;
+    height: 60px;
+}
+
+.mvv-item h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: .7rem;
+    color: var(--azul-escuro);
+}
+
+.mvv-item p {
+    color: #555;
+    line-height: 1.6;
+    font-size: .95rem;
+}
+
+/* ---- MOBILE ---- */
+@media (max-width: 768px) {
+    .mvv-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-sobre-nos,
+    .card-sobre-nos.invertido {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .card-sobre-nos .perfil img {
+        margin-bottom: 1rem;
+    }
+
+    .card-sobre-nos.invertido .info {
+        text-align: center;
+        align-items: center;
+    }
+
+    .card-sobre-nos .links,
+    .card-sobre-nos.invertido .links {
+        justify-content: center;
+    }
+
+    .mvv-container {
+        flex-direction: column;
+    }
+}
+
+
+
+/*======================================================================================================================================================
     CONFIG PRA CELULARES
 ======================================================================================================================================================
 ====================================================================================================================================================== */
