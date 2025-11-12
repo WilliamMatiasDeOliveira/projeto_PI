@@ -1,7 +1,5 @@
 <?php
 
-use App\Functions\Helpers;
-
 require_once "Layouts/header.php";
 require_once "Layouts/nav.php";
 // se não houver cuidador cadastrado com a especialidade
@@ -25,9 +23,11 @@ if (isset($_SESSION['sucesso_proposta_enviada'])) {
 
 <section class="dashboard-cuidador-container flexdashboard">
 
+
   <div class="sidebar-dashboard">
 
     <div class="sidebar-topo">
+
       <div class="sidebar-header">
         <svg xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
@@ -106,22 +106,26 @@ if (isset($_SESSION['sucesso_proposta_enviada'])) {
     </div>
   </div>
 
-  <!-- menssagem de alerta quando não existir cuidador cadastrado com a especialidade buscada  -->
-  <?php if (isset($not_exists_cuidador_with_especiality)): ?>
-    <div class="alert alert-danger">
-      <?= $not_exists_cuidador_with_especiality ?>
-    </div>
-  <?php endif; ?>
-  <!-- menssagem de sucesso quando for enviada uma proposta ao cuidador -->
-  <?php if (isset($proposta_success)): ?>
-    <div class="alert alert-success">
-      <?= $proposta_success ?>
-    </div>
-  <?php endif; ?>
 
   <div class="busca-dashboard">
+
+    <!-- menssagem de alerta quando não existir cuidador cadastrado com a especialidade buscada  -->
+    <?php if (isset($not_exists_cuidador_with_especiality)): ?>
+      <div class="alert alert-danger">
+        <?= $not_exists_cuidador_with_especiality ?>
+      </div>
+    <?php endif; ?>
+    <!-- menssagem de sucesso quando for enviada uma proposta ao cuidador -->
+    <?php if (isset($proposta_success)): ?>
+      <div class="alert alert-success">
+        <?= $proposta_success ?>
+      </div>
+    <?php endif; ?>
+
     <div class="busca-content">
+
       <div class="busca-side-a">
+
         <div class="busca-side-a-text">
           <h3>Filtros</h3>
         </div>
@@ -155,7 +159,8 @@ if (isset($_SESSION['sucesso_proposta_enviada'])) {
             <svg class="seta" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Pro v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2025 Fonticons, Inc.-->
               <path d="M355.2 85C348.2 72.1 334.7 64 320 64C305.3 64 291.8 72.1 284.8 85L68.8 485C62.1 497.4 62.4 512.4 69.6 524.5C76.8 536.6 89.9 544 104 544L536 544C550.1 544 563.1 536.6 570.4 524.5C577.7 512.4 577.9 497.4 571.2 485L355.2 85z"
                 fill="currentColor" />
-              <h5>Saúde</h5>
+            </svg>
+            <h5>Saúde</h5>
           </button>
           <div class="busca-categoria-list">
             <div class="busca-item">
@@ -163,6 +168,7 @@ if (isset($_SESSION['sucesso_proposta_enviada'])) {
                 <input type="hidden" value="curativo" name="especialidade">
                 <input type="submit" class="" value="Curativo">
               </form>
+
 
             </div>
             <div class="busca-item">
@@ -179,7 +185,8 @@ if (isset($_SESSION['sucesso_proposta_enviada'])) {
             <svg class="seta" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Pro v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2025 Fonticons, Inc.-->
               <path d="M355.2 85C348.2 72.1 334.7 64 320 64C305.3 64 291.8 72.1 284.8 85L68.8 485C62.1 497.4 62.4 512.4 69.6 524.5C76.8 536.6 89.9 544 104 544L536 544C550.1 544 563.1 536.6 570.4 524.5C577.7 512.4 577.9 497.4 571.2 485L355.2 85z"
                 fill="currentColor" />
-              <h5>Rotina</h5>
+            </svg>
+            <h5>Rotina</h5>
           </button>
           <div class="busca-categoria-list">
             <div class="busca-item">
@@ -202,7 +209,8 @@ if (isset($_SESSION['sucesso_proposta_enviada'])) {
             <svg class="seta" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Pro v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2025 Fonticons, Inc.-->
               <path d="M355.2 85C348.2 72.1 334.7 64 320 64C305.3 64 291.8 72.1 284.8 85L68.8 485C62.1 497.4 62.4 512.4 69.6 524.5C76.8 536.6 89.9 544 104 544L536 544C550.1 544 563.1 536.6 570.4 524.5C577.7 512.4 577.9 497.4 571.2 485L355.2 85z"
                 fill="currentColor" />
-              <h5>Apoio</h5>
+            </svg>
+            <h5>Apoio</h5>
           </button>
           <div class="busca-categoria-list">
             <div class="busca-item">
@@ -215,7 +223,8 @@ if (isset($_SESSION['sucesso_proposta_enviada'])) {
             <svg class="seta" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Pro v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2025 Fonticons, Inc.-->
               <path d="M355.2 85C348.2 72.1 334.7 64 320 64C305.3 64 291.8 72.1 284.8 85L68.8 485C62.1 497.4 62.4 512.4 69.6 524.5C76.8 536.6 89.9 544 104 544L536 544C550.1 544 563.1 536.6 570.4 524.5C577.7 512.4 577.9 497.4 571.2 485L355.2 85z"
                 fill="currentColor" />
-              <h5>Tarefas</h5>
+            </svg>
+            <h5>Tarefas</h5>
           </button>
           <div class="busca-categoria-list">
             <div class="busca-item">
@@ -260,14 +269,7 @@ if (isset($_SESSION['sucesso_proposta_enviada'])) {
 
 </section>
 
-
-
-
-</div><!--fim container-->
-
-
-
-
+</div><!-- fim container -->
 
 <script>
   // função para as menssagens com alert sumam

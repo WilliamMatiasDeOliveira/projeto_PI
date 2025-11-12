@@ -14,14 +14,6 @@ class AtualizarController
 
         $dados = $_POST;
 
-        // echo "<pre>";
-        // echo "array Dados<br>";
-        // print_r($dados);
-        // echo "<br>";
-        // echo "Session user<br>";
-        // print_r($_SESSION['user']);
-        // die();
-
         // tratamento e movimentação da foto
         $foto_nome = null;
 
@@ -89,12 +81,6 @@ class AtualizarController
             $dados['foto'] = $foto_nome;
         }
 
-        // echo "<pre>";
-        // print_r($_SESSION['user']);
-        // die();
-
-
-
         if (isset($_SESSION['user'])) {
             $user = $_SESSION['user'];
         }
@@ -149,19 +135,6 @@ class AtualizarController
             }
         }
 
-
-        // echo "<pre>";
-
-        // echo "Users";
-        // print_r($user);
-
-        // echo "dados";
-        // print_r($dados);
-
-        // die();
-
-
-
         $tipo = "";
         if ($user['tipo'] === "cliente") {
             $tabela = "clientes";
@@ -175,34 +148,16 @@ class AtualizarController
             $tipo = "cuidador";
         }
 
-        // echo $tabela;
-        // die();
-
-        // echo "<pre>";
-        // echo "array Dados<br>";
-        // print_r($dados);
-        // echo "<br>";
-        // echo "Session user<br>";
-        // print_r($_SESSION['user']);
-        // die();
-
-
-
         $user['nome'] = $dados['nome'];
         $user['cpf'] = $dados['cpf'];
         $user['email'] = $dados['email'];
         $user['telefone'] = $dados['telefone'];
-        // $user['foto'] = $dados['foto'];
         $user['foto'] = $foto_nome ?? $_SESSION['user']['foto']; // mantém a antiga se não houver nova
         $user['tipo'] = $tipo;
 
         if ($user['tipo'] === "cuidador") {
             $user['curriculo'] = $_SESSION['user']['curriculo'];
         }
-
-        // echo "<pre>";
-        // print_r($_SESSION['user']['curriculo']);
-        // die();
 
         unset($_SESSION['user']);
         $_SESSION['user'] = $user;
@@ -215,19 +170,6 @@ class AtualizarController
 
         unset($_SESSION['endereco']);
         $_SESSION['endereco'] = $endereco;
-
-        // $tabela = "";
-        // $id = "";
-
-        // if ($user['tipo'] === "cliente") {
-        //     $tabela = "clientes";
-        //     $id = $_SESSION['user']['id_cliente'];
-        // } else {
-        //     $tabela = "cuidadores";
-        //     $id = $_SESSION['user']['id_cuidador'];
-        // }
-
-
 
         $atualizarDAO = new AtualizarDAO();
         $atualizar = $atualizarDAO->atualizar($tabela, $id);
