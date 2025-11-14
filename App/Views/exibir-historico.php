@@ -9,10 +9,38 @@ require_once "Layouts/header.php";
 require_once "Layouts/nav.php";
 
 $res = $_SESSION['res'] ?? [];
+
+if (isset($_SESSION['Usuario_ja_avaliado'])) {
+    $usuario_ja_avaliado = $_SESSION['Usuario_ja_avaliado'];
+    unset($_SESSION['Usuario_ja_avaliado']);
+}
+
+if (isset($_SESSION['Usuario_avaliado_com_sucesso'])) {
+    $usuario_avaliado_com_sucesso = $_SESSION['Usuario_avaliado_com_sucesso'];
+    unset($_SESSION['Usuario_avaliado_com_sucesso']);
+}
+
+
+
 ?>
 
 <div class="container mt-4">
     <h3 class="mb-4 text-center">Histórico de Serviços</h3>
+
+    <!-- >>>> CONDICIONAIS PARA EVITAR MULTIPLAS AVALIAÇÕES <<<< -->
+
+    <!-- Caso o cuidador já tenha sido avaliado pelo cliente -->
+    <?php if (isset($usuario_ja_avaliado)): ?>
+        <div class="alert alert-danger">
+            <?= $usuario_ja_avaliado ?>
+        </div>
+    <?php endif; ?>
+    <!-- Caso o cuidador ainda não tenha sido avaliado pelo cliente  -->
+    <?php if (isset($usuario_avaliado_com_sucesso)): ?>
+        <div class="alert alert-success">
+            <?= $usuario_avaliado_com_sucesso ?>
+        </div>
+    <?php endif; ?>
 
     <?php if (!empty($res)): ?>
         <table class="table table-primary table-striped table-hover align-middle">
@@ -43,8 +71,8 @@ $res = $_SESSION['res'] ?? [];
                         $idUsuarioQueVaiReceberAvaliacao = $avaliacao['id_cliente'];
                     }
 
-                //    conteudo de $avaliaçao
-                /*
+                    //    conteudo de $avaliaçao
+                    /*
                 Array
 (
     [id_cuidador] => 2
@@ -62,9 +90,9 @@ $res = $_SESSION['res'] ?? [];
 )
                 */
 
-$_SESSION['avaliacao'] = $avaliacao;
+                    $_SESSION['avaliacao'] = $avaliacao;
 
-                   
+
 
                     $nomeUsuario = $avaliacao['nome'] ?? 'Desconhecido';
                 ?>
@@ -92,3 +120,31 @@ $_SESSION['avaliacao'] = $avaliacao;
         </div>
     <?php endif; ?>
 </div>
+
+<script>
+    // função para as menssagens com alert sumam
+
+    // trecho para esperar o DOM carregar
+    document.addEventListener("DOMContentLoaded", () => {
+        // Seleciona todos os elementos com a classe alert
+        const alerts = document.querySelectorAll(".alert");
+
+        // Define um tempo (3 segundos = 3000ms)
+        setTimeout(() => {
+            alerts.forEach(alert => {
+                // Adiciona uma transição suave antes de sumir
+                alert.style.transition = "opacity 0.5s ease";
+                alert.style.opacity = "0";
+
+                // Remove do DOM depois que a transição termina
+                setTimeout(() => {
+                    alert.remove();
+                }, 500);
+            });
+        }, 3000);
+    });
+</script>
+
+<?php
+require_once "Layouts/footer.php";
+?>

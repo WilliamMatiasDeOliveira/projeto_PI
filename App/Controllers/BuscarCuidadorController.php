@@ -31,31 +31,6 @@ class BuscarCuidadorController
             exit;
 
 
-
-
-
-
-
-
-
-
-
-            // $cuidadores = [];
-            // switch($search){
-            //     case "banho":
-            //         echo "vc digitou ". $search;
-            //         break;
-            //     case "curativo":
-            //         echo "vc digitou curativo";
-            //         break;
-            //     case "diaria":
-            //         echo "vc digitou diaria";
-            //         break;
-            //     case "pernoite":
-            //         echo "vc digitou pernoite";
-            //         break;
-
-            // }
         }
     }
 }

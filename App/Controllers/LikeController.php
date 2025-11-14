@@ -26,7 +26,7 @@ class LikeController
         }
 
         /* 
-            >>> DEFININDO OS IDS CORRETAMENTE <<<
+            >>> DEFININDO OS IDS  <<<
 
             Se o usuário logado for CLIENTE:
                 Ele avalia o CUIDADOR (id vindo da URL)

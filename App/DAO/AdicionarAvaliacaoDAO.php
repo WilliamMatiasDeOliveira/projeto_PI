@@ -1,14 +1,16 @@
-<?php 
+<?php
 
 namespace App\DAO;
 
 use PDO;
 
-class AdicionarAvaliacaoDAO extends Connection{
+class AdicionarAvaliacaoDAO extends Connection
+{
 
-    public function AdicionarAvaliacao($id){
+    public function AdicionarAvaliacao($id)
+    {
 
-        if($_SESSION['user']['tipo'] === "cliente"){
+        if ($_SESSION['user']['tipo'] === "cliente") {
             $tabela = "cuidadores";
             $idUser = "id_cuidador";
         } else {
@@ -24,7 +26,20 @@ class AdicionarAvaliacaoDAO extends Connection{
         return $res;
     }
 
-    public function setarAvaliacao($like, $deslike, $cliente_id, $cuidador_id, $id_servico){
+    public function setarAvaliacao($like, $deslike, $cliente_id, $cuidador_id, $id_servico)
+    {
+
+        // >>>> varifica se o usuario ja avaliou este cuidador
+        $verifyIfExistisLikeOrDeslike = new VerifyIfExistisLikeOrDeslikeDAO();
+        $verify = $verifyIfExistisLikeOrDeslike->verifyIfExistisLikeOrDeslike($cliente_id, $cuidador_id);
+
+        if ($verify === true) {
+            $_SESSION['Usuario_ja_avaliado'] = "Você já avaliou este cuidador";
+            header("Location: /projeto_PI/exibir-historico");
+            exit;
+        }
+
+        // >>>> Insere a avaliação no banco <<<<
         $sql = "INSERT INTO avaliacoes (gostei, nao_gostei, cliente_id, cuidador_id, servico_id) VALUES
         (:gostei, :nao_gostei, :cliente_id, :cuidador_id, :servico_id)";
         $stmt = $this->pdo->prepare($sql);
@@ -35,6 +50,8 @@ class AdicionarAvaliacaoDAO extends Connection{
         $stmt->bindValue(":servico_id", $id_servico);
         $stmt->execute();
 
-        
+        $_SESSION['Usuario_avaliado_com_sucesso'] = "Sua Avaliação foi confirmada !";
+        header("Location: /projeto_PI/exibir-historico");
+        exit;
     }
 }

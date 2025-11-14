@@ -145,12 +145,6 @@ if (isset($_SESSION['sucesso_proposta_enviada'])) {
                 <input type="submit" class="" value="Banho">
               </form>
             </div>
-            <div class="busca-item">
-              <form action="/projeto_PI/buscar-cuidador-submit" method="post">
-                <input type="hidden" value="banho" name="especialidade">
-                <input type="submit" class="" value="Banho">
-              </form>
-            </div>
           </div>
         </div>
 
@@ -163,14 +157,6 @@ if (isset($_SESSION['sucesso_proposta_enviada'])) {
             <h5>Saúde</h5>
           </button>
           <div class="busca-categoria-list">
-            <div class="busca-item">
-              <form action="/projeto_PI/buscar-cuidador-submit" method="post">
-                <input type="hidden" value="curativo" name="especialidade">
-                <input type="submit" class="" value="Curativo">
-              </form>
-
-
-            </div>
             <div class="busca-item">
               <form action="/projeto_PI/buscar-cuidador-submit" method="post">
                 <input type="hidden" value="curativo" name="especialidade">
@@ -233,6 +219,7 @@ if (isset($_SESSION['sucesso_proposta_enviada'])) {
         </div>
       </div>
 
+      <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
 
       <!-- é aqui onde serão carregados os cuidadores buscados pelo cliente -->
       <div class="busca-side-b">
@@ -243,7 +230,7 @@ if (isset($_SESSION['sucesso_proposta_enviada'])) {
 
               <div class="cuidador-card">
                 <div class="cuidador-foto">
-                  <img src="assets/imgs/cuidadores/<?= $cuidador['foto'] ?>" alt="...">
+                  <img src="assets/imgs/cuidadores/<?= $cuidador['foto'] ?>" alt="Foto do cuidador">
                 </div>
 
                 <div class="cuidador-body">
@@ -251,16 +238,44 @@ if (isset($_SESSION['sucesso_proposta_enviada'])) {
                   <h4 class="cuidador-nome"><?= $cuidador['nome'] ?></h4>
 
                   <div class="cuidador-actions">
-                    <a href="assets/imgs/curriculos/<?= $cuidador['curriculo'] ?>" class="btn-cv" target="_blank">Currículo</a>
-                    <a href="/projeto_PI/proposta?id_cuidador=<?= $cuidador['id_cuidador'] ?>" class="btn-contratar">Contratar</a>
+                    <a href="assets/imgs/curriculos/<?= $cuidador['curriculo'] ?>"
+                      class="btn-cv" target="_blank">Currículo</a>
+
+                    <a href="/projeto_PI/proposta?id_cuidador=<?= $cuidador['id_cuidador'] ?>"
+                      class="btn-contratar">Contratar</a>
                   </div>
+
+                  <!-- ============================ -->
+                  <!--   ÍCONES FONT AWESOME        -->
+                  <!-- ============================ -->
+                  <div class="cuidador-feedback">
+
+                    <!-- LIKE -->
+                    <span class="like-item">
+                      <i class="fa-solid fa-thumbs-up"
+                        style="color: green; font-size: 20px;"></i>
+                      <span><?= $cuidador['like'] ?></span>
+                    </span>
+
+                    <!-- DESLIKE -->
+                    <span class="deslike-item ms-3">
+                      <i class="fa-solid fa-thumbs-down"
+                        style="color: red; font-size: 20px;"></i>
+                      <span><?= $cuidador['deslike'] ?></span>
+                    </span>
+
+                  </div>
+                  <!-- ============================ -->
+
                 </div>
               </div>
 
             <?php endforeach; ?>
           <?php endif; ?>
+
         </div>
       </div>
+
 
 
     </div>
