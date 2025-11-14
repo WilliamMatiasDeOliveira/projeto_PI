@@ -119,6 +119,10 @@ class MainController
         require_once VIEWS . "/atualizar.php";
     }
 
+    public static function exibirHistorico(){
+        require_once VIEWS."/exibir-historico.php";
+    }
+
 
 
     // //////////////////////////////////////////////////////////

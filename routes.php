@@ -1,8 +1,10 @@
 <?php
 
+use App\Controllers\LikeController;
 use App\Controllers\AceitarRecusarController;
 use App\Controllers\AtualizarController;
 use App\Controllers\BuscarCuidadorController;
+use App\Controllers\CarregarHistoricoController;
 use App\Controllers\ClienteController;
 use App\Controllers\CuidadorController;
 use App\Controllers\EspecialidadeController;
@@ -88,6 +90,15 @@ switch ($url) {
         break;
     case "/atualizar-submit":
         AtualizarController::atualizar_submit();
+        break;
+    case "/carregar-historico":
+        CarregarHistoricoController::carregarHistorico();
+        break;
+    case "/exibir-historico":
+        MainController::exibirHistorico();
+        break;
+    case "/setarLike":
+        LikeController::setar();
         break;
 
 

@@ -234,7 +234,7 @@ if (isset($_SESSION['sucesso_proposta_enviada'])) {
       </div>
 
 
-
+      <!-- é aqui onde serão carregados os cuidadores buscados pelo cliente -->
       <div class="busca-side-b">
         <div class="busca-cuidadores">
 
