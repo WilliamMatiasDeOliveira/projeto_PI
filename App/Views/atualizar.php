@@ -125,10 +125,6 @@ if ($user['tipo'] === "cliente") {
 
             </div>
 
-            <div>
-                <!-- <img src="assets/imgs/clientes/<?= $user['foto'] ?>"> -->
-            </div>
-
             <div class="form-cliente-fim form">
                 <div class="form-cliente-foto">
                     <label for="foto">Alterar Foto</label>
