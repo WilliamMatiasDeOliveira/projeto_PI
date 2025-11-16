@@ -40,7 +40,9 @@ Plataforma digital que conecta cuidadores de saúde a pacientes que necessitam d
 7. [MODELO DE DADOS](#7-modelo-de-dados)  
    - [Modelo de Caso de Uso](#71-modelo-de-caso-de-uso)  
    - [Modelo Conceitual](#72-modelo-conceitual)  
-   - [Modelo Lógico](#73-modelo-lógico)  
+   - [Modelo Lógico](#73-modelo-lógico)
+   - [Modelo de Sequencia](#74-diagrama-de-sequencia)  
+   - [Modelo de Classe](#75-diagrama-de-classe)  
 8. [DESIGN](#8-design)  
 9. [PROTÓTIPO](#9-protótipo)  
 10. [APLICAÇÃO](#10-aplicação)  
@@ -188,23 +190,23 @@ Viável – Nicho em expansão, pouca concorrência local, oportunidade estraté
 
 ### 7.1 Modelo de Caso de Uso
 
-![Modelo Casos de Uso](Modelagens\MODELAGEM-ATUALIZADA\useCase_conecte.png)
+![Modelo Casos de Uso](/Modelagens/MODELAGEM-ATUALIZADA/useCase_conecte.png)
 
 ### 7.2 Modelo Conceitual  
 
-![Modelo Conceitual](Modelagens\MODELAGEM-ATUALIZADA\conceitual_Conecte.png)
+![Modelo Conceitual](/Modelagens/MODELAGEM-ATUALIZADA/conceitual_Conecte.png)
 
 ### 7.3 Modelo Lógico  
 
-![Modelo Entidade Relacionamento](Modelagens\MODELAGEM-ATUALIZADA\DER.png)
+![Modelo Entidade Relacionamento](/Modelagens/MODELAGEM-ATUALIZADA/DER.png)
 
 ### 7.4 Diagrama de Sequencia
 
-![Modelo Diagrama de Sequencia](Modelagens\MODELAGEM-ATUALIZADA\diagrama_sequencia.png)
+![Modelo Diagrama de Sequencia](/Modelagens/MODELAGEM-ATUALIZADA/diagrama_sequencia.png)
 
 ### 7.5 Diagrama de Classe
 
-![Modelo Diagrama de Classe](Modelagens\MODELAGEM-ATUALIZADA\diagrama_classe.png)
+![Modelo Diagrama de Classe](/Modelagens/MODELAGEM-ATUALIZADA/diagrama_classe.png)
 
 Fonte: Elaborado pelos autores.  
 <div align= "end">
