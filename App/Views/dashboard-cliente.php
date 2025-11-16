@@ -60,14 +60,7 @@ if ($user) {
                     </a>
 
                 </li>
-                <li>
-                    <a href="/projeto_PI/logout
-                        "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-                            <path d="M144 224C161.7 224 176 238.3 176 256L176 512C176 529.7 161.7 544 144 544L96 544C78.3 544 64 529.7 64 512L64 256C64 238.3 78.3 224 96 224L144 224zM334.6 80C361.9 80 384 102.1 384 129.4L384 133.6C384 140.4 382.7 147.2 380.2 153.5L352 224L512 224C538.5 224 560 245.5 560 272C560 291.7 548.1 308.6 531.1 316C548.1 323.4 560 340.3 560 360C560 383.4 543.2 402.9 521 407.1C525.4 414.4 528 422.9 528 432C528 454.2 513 472.8 492.6 478.3C494.8 483.8 496 489.8 496 496C496 522.5 474.5 544 448 544L360.1 544C323.8 544 288.5 531.6 260.2 508.9L248 499.2C232.8 487.1 224 468.7 224 449.2L224 262.6C224 247.7 227.5 233 234.1 219.7L290.3 107.3C298.7 90.6 315.8 80 334.6 80z"
-                                fill="currentColor" />
-                        </svg>
-                        </svg> Avaliações</a>
-                </li>
+
                 <li>
                     <a href="/projeto_PI/logout
                         "><svg xmlns="http://www.w3.org/2000/svg"
@@ -117,13 +110,13 @@ if ($user) {
                 <div class="nome-foto">
                     <div class="d-flex justify-content-center">
                         <?php if (empty($user['foto'])): ?>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
                                 <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
                             </svg>
                         <?php else: ?>
                             <img src="assets/imgs/clientes/<?= $user['foto'] ?>"
-                                alt="Foto de perfil do usuário" width="120" height="120"
+                                alt="Foto de perfil do usuário" width="180" height="180"
                                 class=" mt-1 rounded-circle">
                         <?php endif; ?>
                     </div>
@@ -133,12 +126,12 @@ if ($user) {
                         <small>Cliente</small>
                     </div>
                 </div>
-                <div class="sobre-mim">
+                <!-- <div class="sobre-mim">
                     <h3>Sobre mim</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate praesentium, cumque eos
                         laboriosam atque, quibusdam beatae repellendus aspernatur ipsa reprehenderit ex. Expedita a
                         possimus molestiae reprehenderit cupiditate facere veritatis autem!</p>
-                </div>
+                </div> -->
 
             </div>
             <div class="main-b">

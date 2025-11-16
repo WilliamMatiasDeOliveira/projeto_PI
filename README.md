@@ -1,6 +1,6 @@
 <div align="center">
-    
-# DOCUMENTO DA APLICAÇÃO WEB 
+
+# DOCUMENTO DA APLICAÇÃO WEB
 
 ## ![Logo LightMode](App/public/assets/imgs/logos/logoescura.svg#gh-light-mode-only)![Logo DarkMode](App/public/assets/imgs/logos/logobranca.svg#gh-dark-mode-only)
 
@@ -16,6 +16,7 @@ Plataforma digital que conecta cuidadores de saúde a pacientes que necessitam d
 </div>
 
 **Autores:**  
+
 - [Vinicius Leonardo Silveira](https://github.com/vinisilveiraa);
 - [William Matias de Oliveira](https://github.com/WilliamMatiasDeOliveira);
 - [Lucas Catto Silva](https://github.com/lucas-catto);
@@ -48,10 +49,7 @@ Plataforma digital que conecta cuidadores de saúde a pacientes que necessitam d
 
 ---
 
-
-
-## 1. RESUMO DA APLICAÇÃO WEB 
-
+## 1. RESUMO DA APLICAÇÃO WEB
 
 Atualmente, muitas famílias enfrentam dificuldades para encontrar cuidadores de confiança e devidamente qualificados. A busca por esses profissionais geralmente é feita de maneira informal, o que pode resultar em contratações inseguras.  
 
@@ -64,8 +62,8 @@ Este sistema surge como uma resposta moderna, segura e eficiente para aproximar 
 Vivemos em um cenário tecnológico no qual muitas áreas já são digitalizadas. No entanto, o setor de cuidados domiciliares ainda carece de soluções organizadas.  
 
 Assim, a proposta desta aplicação é centralizar informações, filtrar cuidadores, permitir avaliações e facilitar o contato.
-<div align= "end"> 
-    
+<div align= "end">
+
 <sub> [↑ Voltar ao sumário](#0-sumário) </sub>
 </div>
 
@@ -78,8 +76,9 @@ Assim, a proposta desta aplicação é centralizar informações, filtrar cuidad
 - Valorizar o trabalho dos cuidadores, oferecendo visibilidade profissional.  
 - Agilizar o processo de contratação com comunicação e agendamento direto com o cuidador.  
 - Proporcionar segurança e confiabilidade no processo de seleção de cuidadores através de demonstração de seus currículos.  
-<div align= "end"> 
-    
+
+<div align= "end">
+
 <sub> [↑ Voltar ao sumário](#0-sumário) </sub>
 </div>
 
@@ -88,23 +87,28 @@ Assim, a proposta desta aplicação é centralizar informações, filtrar cuidad
 ## 3. MÉTODOS DA PESQUISA  
 
 **Como?**  
+
 - Coleta e análise de dados primários (entrevistas e questionários) e secundários (dados estatísticos e artigos).  
 - Utilização de metodologia ágil (Scrum).  
 
 **Com o quê?**  
+
 - Google Forms, Visual Paradigm, Figma, HTML, CSS, JavaScript, Laravel, MySQL.  
 
 **Onde?**  
+
 - Ambientes virtuais: entrevistas online, desenvolvimento em ambiente local e posterior hospedagem online.  
 
 **Quando?**  
+
 - Etapa 1: Pesquisa e levantamento de requisitos.  
 - Etapa 2: Prototipação e validação.  
 - Etapa 3 e 4: Desenvolvimento.  
 - Etapa 5: Testes e ajustes.  
 - Etapa 6: Entrega final e documentação.  
-<div align= "end"> 
-    
+
+<div align= "end">
+
 <sub> [↑ Voltar ao sumário](#0-sumário) </sub>
 </div>
 
@@ -139,7 +143,7 @@ Este documento especifica as funcionalidades esperadas da aplicação.
 - **RNF07:** Suporte inicial a 1000 usuários simultâneos.  
 - **RNF08:** Backups automáticos.  
 - **RNF09:** Interface intuitiva e acessível.  
-    
+
 <sub> [↑ Voltar ao sumário](#0-sumário) </sub>
 </div>
 
@@ -149,8 +153,8 @@ Este documento especifica as funcionalidades esperadas da aplicação.
 
   ![Modelo de Regras de negocio](/Modelagens/documentacao/negocios_conecte.png)
 
-<div align= "end"> 
-    
+<div align= "end">
+
 <sub> [↑ Voltar ao sumário](#0-sumário) </sub>
 </div>
 
@@ -159,18 +163,22 @@ Este documento especifica as funcionalidades esperadas da aplicação.
 ## 6 - ESTUDO DE VIABILIDADE  
 
 ### 6.1. Viabilidade Técnica  
+
 Viável – Tecnologias adequadas, gratuitas e acessíveis.  
 
 ### 6.2. Viabilidade Econômica  
+
 Viável – Baixo investimento, uso de ferramentas gratuitas.  
 
 ### 6.3. Viabilidade Operacional  
+
 Viável – Resolve problema real com aderência à LGPD.  
 
 ### 6.4. Viabilidade de Mercado  
+
 Viável – Nicho em expansão, pouca concorrência local, oportunidade estratégica.  
-<div align= "end"> 
-    
+<div align= "end">
+
 <sub> [↑ Voltar ao sumário](#0-sumário) </sub>
 </div>
 
@@ -180,21 +188,27 @@ Viável – Nicho em expansão, pouca concorrência local, oportunidade estraté
 
 ### 7.1 Modelo de Caso de Uso
 
-![Modelo Casos de Uso](Modelagens/documentacao/useCase_conecte.png)
+![Modelo Casos de Uso](Modelagens\MODELAGEM-ATUALIZADA\useCase_conecte.png)
 
 ### 7.2 Modelo Conceitual  
 
-![Modelo Conceitual](Modelagens/documentacao/conceitual_conecte.png)
-
-Fonte: Elaborado pelos autores.  
+![Modelo Conceitual](Modelagens\MODELAGEM-ATUALIZADA\conceitual_Conecte.png)
 
 ### 7.3 Modelo Lógico  
 
-![Modelo Entidade Relacionamento](Modelagens/documentacao/der_conecte.png)
+![Modelo Entidade Relacionamento](Modelagens\MODELAGEM-ATUALIZADA\DER.png)
+
+### 7.4 Diagrama de Sequencia
+
+![Modelo Diagrama de Sequencia](Modelagens\MODELAGEM-ATUALIZADA\diagrama_sequencia.png)
+
+### 7.5 Diagrama de Classe
+
+![Modelo Diagrama de Classe](Modelagens\MODELAGEM-ATUALIZADA\diagrama_classe.png)
 
 Fonte: Elaborado pelos autores.  
-<div align= "end"> 
-    
+<div align= "end">
+
 <sub> [↑ Voltar ao sumário](#0-sumário) </sub>
 </div>
 
@@ -204,22 +218,24 @@ Fonte: Elaborado pelos autores.
 
 ### 8.1 Paleta de cores  
 
-|    Nivel   |   Descrição   |   Hex   | Cor       
+|    Nivel   |   Descrição   |   Hex   | Cor
 |:----------:|:-------------:|:-------:|--------------------------------------------------|
 |  Primária  |   Azul Claro  | #D1E4F5 | ![](https://placehold.co/30x15/D1E4F5/D1E4F5.png) |
 | Secundária |   Azul Médio  | #7997B9 | ![](https://placehold.co/30x15/7997B9/7997B9.png)|
 |  Terciária |  Azul Escuro  | #5A7CA0 | ![](https://placehold.co/30x15/5A7CA0/5A7CA0.png) |
 
 ### 8.2 Cores e Estilo  
-A escolha das cores azul e branco para compor a página foi feita para transmitir sensações de confiança, tranquilidade e profissionalismo. 
 
-<strong>Azul →</strong> é amplamente associado à segurança, saúde e tecnologia, além de ser uma cor que inspira calma e credibilidade. 
+A escolha das cores azul e branco para compor a página foi feita para transmitir sensações de confiança, tranquilidade e profissionalismo.
 
-<strong>Branco →</strong>  reforça a ideia de limpeza, clareza e simplicidade, tornando a navegação mais leve e agradável. 
+<strong>Azul →</strong> é amplamente associado à segurança, saúde e tecnologia, além de ser uma cor que inspira calma e credibilidade.
+
+<strong>Branco →</strong>  reforça a ideia de limpeza, clareza e simplicidade, tornando a navegação mais leve e agradável.
 
 Juntas, essas cores criam um ambiente acolhedor e confiável, essencial para uma plataforma voltada ao cuidado e bem-estar.
 
 ### 8.3 Tipografia  
+
 |  Descrição  |   Nome    |
 |:-----------:|:-----------
 |  Títulos    |  Poppins  |
@@ -230,9 +246,9 @@ Juntas, essas cores criam um ambiente acolhedor e confiável, essencial para uma
 
 O símbolo gráfico escolhido é um círculo em formato de medalha, contendo um coração branco ao centro. O círculo representa união, integridade e acolhimento, enquanto o coração reforça o propósito de cuidado e empatia da plataforma. A medalha sugere reconhecimento e confiança, valores essenciais para conectar cuidadores e pacientes.
 
-O nome da marca, "Conecte", utiliza a fonte Righteous, que transmite modernidade e tecnologia. Essa escolha reforça a proposta inovadora do sistema, ao mesmo tempo em que mantém uma identidade visual amigável e acessível. O conjunto cria uma imagem marcante, profissional e alinhada ao segmento de saúde. 
-<div align= "end"> 
-    
+O nome da marca, "Conecte", utiliza a fonte Righteous, que transmite modernidade e tecnologia. Essa escolha reforça a proposta inovadora do sistema, ao mesmo tempo em que mantém uma identidade visual amigável e acessível. O conjunto cria uma imagem marcante, profissional e alinhada ao segmento de saúde.
+<div align= "end">
+
 <sub> [↑ Voltar ao sumário](#0-sumário) </sub>
 </div>
 
@@ -241,8 +257,8 @@ O nome da marca, "Conecte", utiliza a fonte Righteous, que transmite modernidade
 ## 9. PROTÓTIPO  
 
 Protótipo disponível no Figma: [Link para o figma](https://www.figma.com)  
-<div align= "end"> 
-    
+<div align= "end">
+
 <sub> [↑ Voltar ao sumário](#0-sumário) </sub>
 </div>
 
@@ -251,8 +267,8 @@ Protótipo disponível no Figma: [Link para o figma](https://www.figma.com)
 ## 10. APLICAÇÃO  
 
 A aplicação foi desenvolvida em PHP, com layout responsivo. Inclui login, busca, visualização de perfil e contato. Testes de usabilidade foram aplicados.  
-<div align= "end"> 
-    
+<div align= "end">
+
 <sub> [↑ Voltar ao sumário](#0-sumário) </sub>
 </div>
 
@@ -263,8 +279,8 @@ A aplicação foi desenvolvida em PHP, com layout responsivo. Inclui login, busc
 O desenvolvimento da aplicação permitiu compreender o processo de construção de sistemas web com foco social.  
 
 Apesar das dificuldades (requisitos e validação), a aplicação tem potencial de impacto positivo, conectando cuidadores e famílias de forma segura e organizada.  
-<div align= "end"> 
-    
+<div align= "end">
+
 <sub> [↑ Voltar ao sumário](#0-sumário) </sub>
 </div>
 
@@ -285,8 +301,8 @@ Apesar das dificuldades (requisitos e validação), a aplicação tem potencial 
 - GOOGLE FORMS. Disponível em: <https://docs.google.com/forms/>.  
 - MDN Web Docs. HTML, CSS e JavaScript. Disponível em: <https://developer.mozilla.org/>.  
 - SCRUM GUIDES. The Scrum Guide. Disponível em: <https://scrumguides.org/>.
-<div align= "end"> 
-    
+
+<div align= "end">
+
 <sub> [↑ Voltar ao sumário](#0-sumário) </sub>
 </div>
-

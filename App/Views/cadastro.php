@@ -47,12 +47,12 @@ if (isset($_SESSION['fail_login'])) {
 
 <div class="como-funciona-container">
 
-    <h1 class="mt-5">Como Funciona ?</h1>
+    <h1 class="">Como Funciona ?</h1>
 
     <section class="como-funciona">
 
         <div class="card color1">
-            <img src="assets/imgs/funciona1.png" class="card-img" alt="...">
+            <div class="funciona-icon-bg"><img src="assets/imgs/funciona1.png" class="funciona-icon" alt="..."></div>
             <div class="card-body">
                 <h5 class="card-title">Escolha seu papel</h5>
                 <p class="card-text">
@@ -63,7 +63,7 @@ if (isset($_SESSION['fail_login'])) {
         </div>
 
         <div class="card color2">
-            <img src="assets/imgs/funciona2.png" class="card-img" alt="...">
+            <div class="funciona-icon-bg"><img src="assets/imgs/funciona2.png" class="funciona-icon" alt="..."></div>
             <div class="card-body">
                 <h5 class="card-title">Preencha um formulário</h5>
                 <p class="card-text">
@@ -74,7 +74,7 @@ if (isset($_SESSION['fail_login'])) {
         </div>
 
         <div class="card color2">
-            <img src="assets/imgs/funciona3.png" class="card-img" alt="...">
+            <div class="funciona-icon-bg"><img src="assets/imgs/funciona3.png" class="funciona-icon" alt="..."></div>
             <div class="card-body">
                 <h5 class="card-title">Conecte-se com facilidade</h5>
                 <p class="card-text">
@@ -84,7 +84,7 @@ if (isset($_SESSION['fail_login'])) {
         </div>
 
         <div class="card color1">
-            <img src="assets/imgs/funciona4.png" class="card-img" alt="...">
+            <div class="funciona-icon-bg"><img src="assets/imgs/funciona4.png" class="funciona-icon" alt="..."></div>
             <div class="card-body">
                 <h5 class="card-title">Comece o cuidado</h5>
                 <p class="card-text">
@@ -99,7 +99,6 @@ if (isset($_SESSION['fail_login'])) {
 
 
 <script>
-    
     // função para as menssagens com alert sumam
     // trecho para esperar o DOM carregar
     document.addEventListener("DOMContentLoaded", () => {

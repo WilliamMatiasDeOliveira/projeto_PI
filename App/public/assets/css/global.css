@@ -48,7 +48,7 @@ ROOT
     /* TODO: ABAIXO A SER DEFINIDO AINDA */
     --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     /* sombra padrao */
-    --shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.2);
+    --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
     /* sombra ao passar o mouse */
     --shadow-active: 0 2px 5px rgba(0, 0, 0, 0.2);
     /* sombra ao clicar */
