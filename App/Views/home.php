@@ -1,9 +1,21 @@
 <?php
 require_once "Layouts/header.php";
 require_once "Layouts/nav.php";
+
+if (isset($_SESSION['deletado_sucesso'])) {
+    $deletado_sucesso = $_SESSION['deletado_sucesso'];
+    unset($_SESSION['deletado_sucesso']);
+}
 ?>
 
 <div class="hero-bg">
+
+    <?php if (isset($deletado_sucesso)): ?>
+        <div class="alert alert-danger">
+            <?= $deletado_sucesso ?>
+        </div>
+    <?php endif; ?>
+
     <div class="hero">
         <div class="hero-intro">
             <h1>
@@ -39,6 +51,29 @@ require_once "Layouts/nav.php";
                 rapida e humana</strong>.</p>
     </div>
 </section>
+
+<script>
+    // função para as menssagens com alert sumam
+    // trecho para esperar o DOM carregar
+    document.addEventListener("DOMContentLoaded", () => {
+        // Seleciona todos os elementos com a classe alert
+        const alerts = document.querySelectorAll(".alert");
+
+        // Define um tempo (3 segundos = 3000ms)
+        setTimeout(() => {
+            alerts.forEach(alert => {
+                // Adiciona uma transição suave antes de sumir
+                alert.style.transition = "opacity 0.5s ease";
+                alert.style.opacity = "0";
+
+                // Remove do DOM depois que a transição termina
+                setTimeout(() => {
+                    alert.remove();
+                }, 500);
+            });
+        }, 3000);
+    });
+</script>
 
 
 <?php

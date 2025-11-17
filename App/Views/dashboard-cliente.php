@@ -73,7 +73,10 @@ if ($user) {
             </ul>
         </div>
 
-        <div class="sidebar-baixo  d-flex align-items-center">
+
+
+        <div class="sidebar-baixo  d-block align-items-center">
+
             <a class="sidebar-perfil">
                 <?php if (empty($user['foto'])): ?>
                     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
@@ -92,6 +95,19 @@ if ($user) {
                     <p class="mb-0"><?= $user['nome'] ?></p>
                 </div>
             </a>
+
+            <a href="/projeto_PI/delete" class="justify-content-center bg-danger text-white p-2 align-items-center"
+                data-bs-toggle="modal" data-bs-target="#modalExcluirConta">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-trash me-2" viewBox="0 0 16 16">
+                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1z" />
+                </svg>
+
+                Excluir conta
+            </a>
+
         </div>
 
 
@@ -126,12 +142,6 @@ if ($user) {
                         <small>Cliente</small>
                     </div>
                 </div>
-                <!-- <div class="sobre-mim">
-                    <h3>Sobre mim</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate praesentium, cumque eos
-                        laboriosam atque, quibusdam beatae repellendus aspernatur ipsa reprehenderit ex. Expedita a
-                        possimus molestiae reprehenderit cupiditate facere veritatis autem!</p>
-                </div> -->
 
             </div>
             <div class="main-b">
@@ -214,6 +224,36 @@ if ($user) {
     </div>
 </section>
 
+<div class="modal fade" id="modalExcluirConta" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Cabeçalho vermelho -->
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title">Confirmar exclusão</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Corpo -->
+      <div class="modal-body">
+        Tem certeza que deseja excluir sua conta? Esta ação não pode ser desfeita.
+      </div>
+
+      <!-- Rodapé com botões -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancelar
+        </button>
+
+        <!-- Botão de confirmação -->
+        <a href="/projeto_PI/delete" class="btn btn-danger">
+          Confirmar exclusão
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 
 

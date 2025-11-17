@@ -7,6 +7,7 @@ use App\Controllers\BuscarCuidadorController;
 use App\Controllers\CarregarHistoricoController;
 use App\Controllers\ClienteController;
 use App\Controllers\CuidadorController;
+use App\Controllers\DeleteController;
 use App\Controllers\EspecialidadeController;
 use App\Controllers\ForgotPasswordController;
 use App\Controllers\LoginController;
@@ -100,6 +101,10 @@ switch ($url) {
     case "/setarLike":
         LikeController::setar();
         break;
+    case "/delete":
+        DeleteController::delete();
+        break;
+        
 
 
 
