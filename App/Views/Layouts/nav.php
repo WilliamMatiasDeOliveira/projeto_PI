@@ -44,6 +44,9 @@ if (isset($_SESSION['novas_propostas'])) {
       background-color: #f8f9fa;
       padding: 1rem;
       border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .nav-link {
@@ -52,13 +55,31 @@ if (isset($_SESSION['novas_propostas'])) {
       text-align: center;
     }
 
-    .d-flex.gap-2 {
+    .navbar-nav {
+      margin: 0 !important;
+      padding-left: 0;
+      width: 100%;
+      display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    .navbar .btn {
+    .navbar-nav .nav-item {
       width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .d-flex.gap-2 {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+
+    .navbar .btn {
+      width: auto;
     }
   }
 </style>
@@ -80,7 +101,7 @@ if (isset($_SESSION['novas_propostas'])) {
     </button>
 
     <!-- LINKS -->
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <div class="collapse navbar-collapse justify-content-center align-items-center" id="navbarNav">
       <ul class="navbar-nav me-3">
         <li class="nav-item">
           <a href="/projeto_PI/" class="nav-link active">Home</a>
