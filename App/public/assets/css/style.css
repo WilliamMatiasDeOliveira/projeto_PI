@@ -1895,6 +1895,7 @@ ESPECIALIDADE BUSCAR
     header .menu {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         flex-wrap: wrap;
         gap: 0;
     }
@@ -2013,36 +2014,41 @@ ESPECIALIDADE BUSCAR
 ==================================================
 */
 
-    .sobre {
+    .home-sobre {
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        padding: 1rem;
     }
 
-    .sobre .sobre-info {
+    .home-sobre .home-sobre-info {
         width: 100%;
         padding: 1rem;
     }
 
-    .sobre .sobre-info h1 {
+    .home-sobre .home-sobre-info h1 {
         font-size: 1.5rem;
         margin-top: 2rem;
     }
 
-    .sobre .sobre-info p {
+    .home-sobre .home-sobre-info p {
         text-align: left;
         font-size: 1rem;
     }
 
-    .sobre .sobre-img {
+    .home-sobre .home-sobre-img {
         width: 100%;
         order: 1;
     }
 
-    .sobre .sobre-img div {
+    .home-sobre .home-sobre-img div {
         width: 100%;
         text-align: center;
     }
 
-    .sobre .sobre-img img {
+    .home-sobre .home-sobre-img img {
         border-radius: var(--radius);
         width: 100%;
 
@@ -2086,7 +2092,7 @@ ESPECIALIDADE BUSCAR
     .papeis {
         flex-direction: column;
         padding: 1rem;
-        gap: 0rem;
+        gap: 1rem;
     }
 
     /*
@@ -2273,6 +2279,7 @@ CONFIG TABLET    MEDIAS QUERY TABLET
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        align-items: center;
         gap: 0;
     }
 
@@ -2280,6 +2287,7 @@ CONFIG TABLET    MEDIAS QUERY TABLET
         display: flex;
         flex-direction: column;
         /* flex-wrap: wrap; */
+        align-items: center;
         justify-content: center;
         text-align: center;
     }
