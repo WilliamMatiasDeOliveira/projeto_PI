@@ -4,13 +4,13 @@ require_once "Layouts/nav.php";
 ?>
 
 
-<section class="contatos-container">
+<section class="contatos-container align-items-start">
 
     <div class="contatos-redes">
         <div class="contatos-email">
             <span>
                 <div>
-                    <a href="mailto:seuemail@exemplo.com">
+                    <!-- <a href="mailto:seuemail@exemplo.com">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 48 48">
                             <path fill="#03A9F4"
                                 d="M21,31c0,1.104,0.896,2,2,2h17c1.104,0,2-0.896,2-2V16c0-1.104-0.896-2-2-2H23c-1.104,0-2,0.896-2,2V31z">
@@ -24,20 +24,16 @@ require_once "Layouts/nav.php";
                             </path>
                         </svg>
                         Nos envie um Email!
-                    </a>
+                    </a> -->
+                
             </span>
         </div>
-        <form action="{{ route('envio.email') }}" method="POST">
-            <input type="text" placeholder="Insira seu Nome " name="nome" class="form-control" value="">
-            <input type="email" placeholder="Insira um Email válido" name="email" class="form-control" value="">
-            <textarea name="texto" placeholder="Insira sua mensagem" class="form-control mt-3" rows="3"></textarea>
-            <div>
-                <input type="submit" class="btn btn-secondary form-control" value="Enviar">
-            </div>
-        </form>
+        
     </div>
 
+    <h4 class="text-primary">Nos envie uma menssagem !</h4>
     <div class="contatos-outros">
+
         <div>
             <span>
                 <a href="https://wa.me/5511999999999" target="_blank">

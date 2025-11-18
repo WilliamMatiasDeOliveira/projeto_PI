@@ -5,17 +5,10 @@ use App\DAO\GetAddressToUserInSession;
 require_once "Layouts/header.php";
 require_once "Layouts/nav.php";
 
-// echo "<pre>";
-//     print_r($_SESSION['user']);
-//     die();
-
-
 if (isset($_SESSION['user'])) {
     $user = $_SESSION['user'];
 }
 
-// echo "<pre>";
-// print_r($user['foto']);
 
 if ($user) {
     $enderecoUserSessao = new GetAddressToUserInSession();
@@ -64,23 +57,6 @@ if (isset($_SESSION['sucesso_resposta_enviada'])) {
                                 fill="currentColor" />
                         </svg> Cadastrar Especialidade </a>
                 </li>
-                <!-- <li>
-                    <a href=""><svg xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 640 640">
-                            !Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.
-                            <path
-                                d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM288 224C288 206.3 302.3 192 320 192C337.7 192 352 206.3 352 224C352 241.7 337.7 256 320 256C302.3 256 288 241.7 288 224zM280 288L328 288C341.3 288 352 298.7 352 312L352 400L360 400C373.3 400 384 410.7 384 424C384 437.3 373.3 448 360 448L280 448C266.7 448 256 437.3 256 424C256 410.7 266.7 400 280 400L304 400L304 336L280 336C266.7 336 256 325.3 256 312C256 298.7 266.7 288 280 288z"
-                                fill="currentColor" />
-                        </svg> Estatisticas</a>
-                </li> -->
-                <!-- <li>
-                    <a href=""> <svg xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 640 640">!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.
-                            <path
-                                d="M128 128C128 92.7 156.7 64 192 64L341.5 64C358.5 64 374.8 70.7 386.8 82.7L493.3 189.3C505.3 201.3 512 217.6 512 234.6L512 512C512 547.3 483.3 576 448 576L192 576C156.7 576 128 547.3 128 512L128 128zM336 122.5L336 216C336 229.3 346.7 240 360 240L453.5 240L336 122.5zM248 320C234.7 320 224 330.7 224 344C224 357.3 234.7 368 248 368L392 368C405.3 368 416 357.3 416 344C416 330.7 405.3 320 392 320L248 320zM248 416C234.7 416 224 426.7 224 440C224 453.3 234.7 464 248 464L392 464C405.3 464 416 453.3 416 440C416 426.7 405.3 416 392 416L248 416z"
-                                fill="currentColor" />
-                        </svg> Histórico</a>
-                </li> -->
                 <li>
                     <a href="/projeto_PI/logout
                         "><svg xmlns="http://www.w3.org/2000/svg"
@@ -92,6 +68,7 @@ if (isset($_SESSION['sucesso_resposta_enviada'])) {
                 </li>
             </ul>
         </div>
+        <!-- ///////////////////////////////////////////////////////////////// -->
         <div class="sidebar-baixo d-block align-items-center">
 
             <a class="sidebar-perfil">
@@ -122,6 +99,7 @@ if (isset($_SESSION['sucesso_resposta_enviada'])) {
                 Excluir conta
             </a>
         </div>
+        <!-- /////////////////////////////////////////////////////////////////// -->
     </div>
 
     <!-- /////////////////////////////////////////////////////////////// -->
@@ -140,7 +118,7 @@ if (isset($_SESSION['sucesso_resposta_enviada'])) {
 
         <h1>Bem vindo, <strong><?= ucwords($user['nome']) ?><strong>!</h1>
         <div class="main-content">
-            <div class="main-a">
+            <div class="main-a justify-content-start">
 
                 <div class="nome-foto">
                     <div class="d-flex justify-content-center">
@@ -161,13 +139,6 @@ if (isset($_SESSION['sucesso_resposta_enviada'])) {
                         <small>Cuidador</small>
                     </div>
                 </div>
-
-                <!-- <div class="sobre-mim">
-                    <h3>Sobre mim</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate praesentium, cumque eos
-                        laboriosam atque, quibusdam beatae repellendus aspernatur ipsa reprehenderit ex. Expedita a
-                        possimus molestiae reprehenderit cupiditate facere veritatis autem!</p>
-                </div> -->
 
             </div>
             <div class="main-b">

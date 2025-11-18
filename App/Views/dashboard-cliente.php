@@ -74,7 +74,7 @@ if ($user) {
         </div>
 
 
-
+<!-- //////////////////////////////////////////////////////////////////////////////// -->
         <div class="sidebar-baixo  d-block align-items-center">
 
             <a class="sidebar-perfil">
@@ -109,7 +109,7 @@ if ($user) {
             </a>
 
         </div>
-
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
 
 
     </div>
@@ -122,7 +122,7 @@ if ($user) {
     <div class=" main-dashboard">
         <h1>Bem vindo, <strong><?= ucwords($user['nome']) ?><strong>!</h1>
         <div class="main-content">
-            <div class="main-a">
+            <div class="main-a justify-content-start">
                 <div class="nome-foto">
                     <div class="d-flex justify-content-center">
                         <?php if (empty($user['foto'])): ?>

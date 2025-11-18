@@ -77,26 +77,42 @@ if (isset($_SESSION['sucesso_proposta_enviada'])) {
       </ul>
     </div>
 
-    <div class="sidebar-baixo  d-flex align-items-center">
-      <a class="sidebar-perfil">
-        <?php if (empty($user['foto'])): ?>
-          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
-            class="bi bi-person-circle mt-1" viewBox="0 0 16 16">
-            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-            <path fill-rule="evenodd"
-              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37
+    <!-- //////////////////////////////////////////////////////////////////////// -->
+    <div class="sidebar-baixo  d-block align-items-center">
+
+            <a class="sidebar-perfil">
+                <?php if (empty($user['foto'])): ?>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+                        class="bi bi-person-circle mt-1" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37
                       C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-          </svg>
-        <?php else: ?>
-          <img src="assets/imgs/clientes/<?= $user['foto'] ?>"
-            alt="Foto de perfil do usuário" width="50" height="50"
-            class="mt-1 rounded-circle">
-        <?php endif; ?>
-        <div class="sidebar-nome mt-2">
-          <p class="mb-0"><?= $user['nome'] ?></p>
+                    </svg>
+                <?php else: ?>
+                    <img src="assets/imgs/clientes/<?= $user['foto'] ?>"
+                        alt="Foto de perfil do usuário" width="50" height="50"
+                        class="mt-1 rounded-circle">
+                <?php endif; ?>
+                <div class="sidebar-nome mt-2">
+                    <p class="mb-0"><?= $user['nome'] ?></p>
+                </div>
+            </a>
+
+            <a href="/projeto_PI/delete" class="justify-content-center bg-danger text-white p-2 align-items-center"
+                data-bs-toggle="modal" data-bs-target="#modalExcluirConta">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-trash me-2" viewBox="0 0 16 16">
+                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1z" />
+                </svg>
+
+                Excluir conta
+            </a>
+
         </div>
-      </a>
-    </div>
+    <!-- ////////////////////////////////////////////////////////////////////////////// -->
   </div>
 
 
@@ -216,7 +232,7 @@ if (isset($_SESSION['sucesso_proposta_enviada'])) {
 
       <!-- é aqui onde serão carregados os cuidadores buscados pelo cliente -->
       <div class="busca-side-b">
-        <div class="busca-cuidadores">
+        <div class="busca-cuidadores ">
 
           <?php if (isset($cuidadores)): ?>
             <?php foreach ($cuidadores as $cuidador): ?>
