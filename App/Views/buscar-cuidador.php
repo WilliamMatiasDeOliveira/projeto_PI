@@ -295,6 +295,43 @@ if (isset($_SESSION['sucesso_proposta_enviada'])) {
 
 </div><!-- fim container -->
 
+<div class="modal fade" id="modalExcluirConta" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Cabeçalho vermelho -->
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title">Confirmar exclusão</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Corpo -->
+      <div class="modal-body">
+        Tem certeza que deseja excluir sua conta? Esta ação não pode ser desfeita.
+      </div>
+
+      <!-- Rodapé com botões -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancelar
+        </button>
+
+        <!-- Botão de confirmação -->
+        <a href="/projeto_PI/delete" class="btn btn-danger">
+          Confirmar exclusão
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
 <script>
   // função para as menssagens com alert sumam
   // trecho para esperar o DOM carregar

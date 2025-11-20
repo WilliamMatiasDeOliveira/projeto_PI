@@ -166,28 +166,7 @@ if (isset($_SESSION['Usuario_avaliado_com_sucesso'])) {
                             $idUsuarioQueVaiReceberAvaliacao = $avaliacao['id_cliente'];
                         }
 
-                        //    conteudo de $avaliaçao
-                        /*
-                        Array
-                        (
-                            [id_cuidador] => 2
-                            [nome] => sheila
-                            [email] => williamsheilami@gmail.com
-                            [cpf] => 33665296833
-                            [senha] => $2y$10$t2qVVe9CQkWio9G82pbhLetIlmKgG8Gh1bk3sJjCYobdfSg16eeIy
-                            [tipo] => cuidador
-                            [telefone] => 14998546814
-                            [foto] => cuidador_69164eed7fde47.53046113.jpg
-                            [curriculo] => curriculo_69164eed803831.78885013.pdf
-                            [endereco_id] => 3
-                            [reset_token] => 
-                            [token_expiration] => 
-                            )
-                            */
-
                         $_SESSION['avaliacao'] = $avaliacao;
-
-
 
                         $nomeUsuario = $avaliacao['nome'] ?? 'Desconhecido';
                     ?>
@@ -216,6 +195,42 @@ if (isset($_SESSION['Usuario_avaliado_com_sucesso'])) {
         <?php endif; ?>
     </div>
 </section>
+
+<div class="modal fade" id="modalExcluirConta" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Cabeçalho vermelho -->
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title">Confirmar exclusão</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Corpo -->
+      <div class="modal-body">
+        Tem certeza que deseja excluir sua conta? Esta ação não pode ser desfeita.
+      </div>
+
+      <!-- Rodapé com botões -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancelar
+        </button>
+
+        <!-- Botão de confirmação -->
+        <a href="/projeto_PI/delete" class="btn btn-danger">
+          Confirmar exclusão
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
 
 <script>
     // função para as menssagens com alert sumam
