@@ -10,6 +10,19 @@ if (isset($_SESSION['user'])) {
     $endereco = $_SESSION['endereco'];
 }
 
+$foto = $user['foto'] ?? null;
+
+// pasta depende do tipo
+$pasta = $user['tipo'] === "cliente" ? "clientes" : "cuidadores";
+
+$caminhoFoto = "assets/imgs/$pasta/" . $foto;
+
+// define imagem final: foto ou ícone
+$fotoPath = (!empty($foto) && file_exists($caminhoFoto))
+    ? $caminhoFoto
+    : null; // vai cair no SVG depois
+
+
 $id = "";
 $tipo = "";
 
@@ -30,7 +43,28 @@ if ($user['tipo'] === "cliente") {
     <section class="form-cliente">
 
         <div class="form-cliente-side">
-            <img src="assets/imgs/cadastro.png" alt="Imagem de fundo">
+            <!-- <img src="assets/imgs/cadastro.png" alt="Imagem de fundo"> -->
+             <!-- <img class="" src="" id="img"> -->
+              <!-- <img class="" src="<?= $fotoPath ?>" id="img" width="270" height="200"> -->
+               <?php if (empty($fotoPath)): ?>
+        <!-- Ícone caso não exista foto -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="currentColor"
+            class="bi bi-person-circle mt-1" viewBox="0 0 16 16" id="img">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+            <path fill-rule="evenodd"
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37
+                C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+        </svg>
+    <?php else: ?>
+        <!-- Foto atual -->
+        <img src="<?= $fotoPath ?>" 
+             alt="Foto do usuário"
+             id="img"
+             width="270"
+             height="200"
+             class="border border-3 border-info rounded">
+    <?php endif; ?>
+
         </div>
 
         <form action="/projeto_PI/atualizar-submit" method="post" enctype="multipart/form-data">
@@ -128,7 +162,7 @@ if ($user['tipo'] === "cliente") {
             <div class="form-cliente-fim form">
                 <div class="form-cliente-foto">
                     <label for="foto">Alterar Foto</label>
-                    <input type="file" name="foto" class="form-control" placeholder="jpg, jpeg, png">
+                    <input type="file" name="foto" class="form-control"onchange="mostrar(this)" placeholder="jpg, jpeg, png">
                     <!-- erro -->
                     <?php if (isset($erros['foto_invalida'])): ?>
                         <div class="text-warning">
@@ -144,6 +178,38 @@ if ($user['tipo'] === "cliente") {
         </form>
     </section>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+	<script>
+		function mostrar(img) {
+    if (img.files && img.files[0]) {
+
+        const reader = new FileReader();
+        reader.onload = (el) => {
+
+            const atual = document.getElementById('img');
+
+            // se for SVG, troca por IMG
+            if (atual.tagName.toLowerCase() === 'svg') {
+                const novo = document.createElement('img');
+                novo.id = 'img';
+                novo.className = 'border border-3 border-info rounded';
+                novo.width = 270;
+                novo.height = 200;
+                atual.replaceWith(novo);
+            }
+
+            $('#img')
+                .attr('src', el.target.result)
+                .width(270)
+                .height(200);
+        };
+
+        reader.readAsDataURL(img.files[0]);
+    }
+}
+
+	</script>
 
 <?php
 require_once "Layouts/footer.php";
