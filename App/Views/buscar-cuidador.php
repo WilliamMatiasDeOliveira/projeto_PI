@@ -120,7 +120,7 @@ if (isset($_SESSION['sucesso_proposta_enviada'])) {
 
     <!-- menssagem de alerta quando não existir cuidador cadastrado com a especialidade buscada  -->
     <?php if (isset($not_exists_cuidador_with_especiality)): ?>
-      <div class="alert alert-danger">
+      <div class="alert alert-secondary">
         <?= $not_exists_cuidador_with_especiality ?>
       </div>
     <?php endif; ?>

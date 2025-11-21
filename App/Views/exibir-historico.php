@@ -126,7 +126,7 @@ if (isset($_SESSION['Usuario_avaliado_com_sucesso'])) {
 
         <!-- Caso o cuidador já tenha sido avaliado pelo cliente -->
         <?php if (isset($usuario_ja_avaliado)): ?>
-            <div class="alert alert-danger">
+            <div class="alert alert-secondary">
                 <?= $usuario_ja_avaliado ?>
             </div>
         <?php endif; ?>

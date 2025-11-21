@@ -27,7 +27,7 @@ if(isset($_SESSION['erro_envio_resposta'])){
 ?>
 
 <?php if(isset($erro_envio_resposta)): ?>
-    <div class="alert alert-danger">
+    <div class="alert alert-secondary">
         <?= $erro_envio_resposta ?>
     </div>
 <?php endif; ?>

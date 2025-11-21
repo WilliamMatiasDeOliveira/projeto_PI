@@ -11,7 +11,7 @@ if (isset($_SESSION['deletado_sucesso'])) {
 <div class="hero-bg">
 
     <?php if (isset($deletado_sucesso)): ?>
-        <div class="alert alert-danger">
+        <div class="alert alert-secondary">
             <?= $deletado_sucesso ?>
         </div>
     <?php endif; ?>

@@ -7,7 +7,7 @@ require_once "Layouts/nav.php";
     <h2 class="text-center mb-4">Recuperar Senha</h2>
 
     <?php if (isset($_SESSION['error'])): ?>
-        <div class="alert alert-danger text-center"><?= $_SESSION['error']; unset($_SESSION['error']); ?></div>
+        <div class="alert alert-secondary text-center"><?= $_SESSION['error']; unset($_SESSION['error']); ?></div>
     <?php endif; ?>
 
     <?php if (isset($_SESSION['success'])): ?>

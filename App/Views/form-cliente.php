@@ -19,13 +19,13 @@ if (isset($_SESSION['old'])) {
 
 <!-- se o e-mail já existir no bd -->
 <?php if (isset($erros['email_exists'])): ?>
-    <div class="alert alert-danger text-center">
+    <div class="alert alert-secondary text-center">
         <?= $erros['email_exists']; ?>
     </div>
 <?php endif; ?>
 <!-- se o salvamento da foto falhou -->
 <?php if (isset($erros['fail_foto_saved'])): ?>
-    <div class="alert alert-danger text-center">
+    <div class="alert alert-secondary text-center">
         <?= $erros['fail_foto_saved']; ?>
     </div>
 <?php endif; ?>

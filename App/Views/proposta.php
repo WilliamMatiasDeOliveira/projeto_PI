@@ -20,7 +20,7 @@ if (isset($_SESSION['erro_envio_proposta'])) {
 <div class="container mt-5 mb-5">
 
   <?php if (isset($proposta_error)): ?>
-    <div class="alert alert-danger">
+    <div class="alert alert-secondary">
       <?= $_SESSION['erro_envio_proposta'] ?>
 
     </div>

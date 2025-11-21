@@ -10,7 +10,7 @@ $type = $_GET['type'] ?? '';
     <h2 class="text-center mb-4">Redefinir Senha</h2>
 
     <?php if (isset($_SESSION['error'])): ?>
-        <div class="alert alert-danger text-center"><?= $_SESSION['error']; unset($_SESSION['error']); ?></div>
+        <div class="alert alert-secondary text-center"><?= $_SESSION['error']; unset($_SESSION['error']); ?></div>
     <?php endif; ?>
 
     <form action="/projeto_PI/reset-password-submit" method="post" class="w-50 mx-auto">

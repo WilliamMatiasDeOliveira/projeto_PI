@@ -14,7 +14,7 @@ if (isset($_SESSION['fail_login'])) {
 
     <!-- se email ou senha for invalidos -->
     <?php if (isset($fail_login)): ?>
-        <div class="alert alert-danger text-center">
+        <div class="alert alert-secondary text-center">
             <?= $fail_login ?>
         </div>
     <?php endif; ?>

@@ -119,14 +119,14 @@ $especialidades = $_SESSION['all_specialitys'];
 
         <!-- bloco preventivo para evitar que clientes cadastrem especialidades -->
         <?php if (isset($tipe_user_invalid)): ?>
-            <div class="alert alert-danger mt-1">
+            <div class="alert alert-secondary mt-1">
                 <?= $tipe_user_invalid ?>
             </div>
         <?php endif; ?>
 
         <!-- bloco preventivo para previnir busca de especialidades inexistentes -->
         <?php if (isset($not_exist_especiality)): ?>
-            <div class="alert alert-danger mt-1">
+            <div class="alert alert-secondary mt-1">
                 <?= $not_exist_especiality ?>
             </div>
         <?php endif; ?>
@@ -140,7 +140,7 @@ $especialidades = $_SESSION['all_specialitys'];
 
         <!-- se o cuidador tentar cadastrar uma especialidade ja cadastrada -->
         <?php if (isset($check_if_exists_specialitys)): ?>
-            <div class="alert alert-danger mt-1">
+            <div class="alert alert-secondary mt-1">
                 <?= $check_if_exists_specialitys ?>
             </div>
         <?php endif; ?>
