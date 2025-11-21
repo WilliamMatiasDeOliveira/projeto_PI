@@ -190,7 +190,7 @@ Viável – Nicho em expansão, pouca concorrência local, oportunidade estraté
 
 ### 7.1 Modelo de Caso de Uso
 
-![Modelo Casos de Uso](/Modelagens/MODELAGEM-ATUALIZADA/useCase_conecte.png)
+![Modelo Casos de Uso](/Modelagens/MODELAGEM-ATUALIZADA/caso_uso.png)
 
 ### 7.2 Modelo Conceitual  
 

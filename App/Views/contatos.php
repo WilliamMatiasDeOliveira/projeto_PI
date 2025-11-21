@@ -30,8 +30,8 @@ require_once "Layouts/nav.php";
         </div>
         
     </div>
+    <h3 class="mb-0">Nos envie uma mensagem!</h3>
 
-    <h4 class="text-primary">Nos envie uma menssagem !</h4>
     <div class="contatos-outros">
 
         <div>

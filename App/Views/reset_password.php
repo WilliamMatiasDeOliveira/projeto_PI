@@ -6,7 +6,7 @@ $token = $_GET['token'] ?? '';
 $type = $_GET['type'] ?? '';
 ?>
 
-<div class="container py-5">
+<div class="container py-5 d-flex flex-column stretch justify-content-center" style="min-height: 65vh;">
     <h2 class="text-center mb-4">Redefinir Senha</h2>
 
     <?php if (isset($_SESSION['error'])): ?>
