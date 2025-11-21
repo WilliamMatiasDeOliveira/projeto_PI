@@ -149,7 +149,7 @@ if (isset($_SESSION['Usuario_avaliado_com_sucesso'])) {
                         <?php else: ?>
                             <th>Cliente</th>
                         <?php endif; ?>
-                        <th class="text-center">Ações</th>
+                        <th class="text-center">Avaliação</th>
                     </tr>
                 </thead>
                 <tbody>
