@@ -123,6 +123,10 @@ class MainController
         require_once VIEWS."/exibir-historico.php";
     }
 
+    public static function politica_privacidade(){
+        require_once VIEWS."/politica-privacidade.php";
+    }
+
 
 
     // //////////////////////////////////////////////////////////

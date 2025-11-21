@@ -104,6 +104,9 @@ switch ($url) {
     case "/delete":
         DeleteController::delete();
         break;
+    case "/politica-privacidade":
+        MainController::politica_privacidade();
+        break;
         
 
 

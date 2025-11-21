@@ -118,6 +118,9 @@ if (isset($_SESSION['novas_propostas'])) {
         <li class="nav-item">
           <a href="/projeto_PI/contatos" class="nav-link">Contatos</a>
         </li>
+         <li class="nav-item">
+          <a href="/projeto_PI/politica-privacidade" class="nav-link">Politica de privacidade</a>
+        </li>
       </ul>
 
       <!-- BOTÕES -->
