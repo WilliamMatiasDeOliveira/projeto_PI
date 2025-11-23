@@ -262,14 +262,14 @@ if (isset($_SESSION['sucesso_proposta_enviada'])) {
                     <!-- LIKE -->
                     <span class="like-item">
                       <i class="fa-solid fa-thumbs-up"
-                        style="color: green; font-size: 20px;"></i>
+                        style="color: var(--verde); font-size: 20px;"></i>
                       <span><?= $cuidador['like'] ?></span>
                     </span>
 
                     <!-- DESLIKE -->
-                    <span class="deslike-item ms-3">
+                    <span class="deslike-item">
                       <i class="fa-solid fa-thumbs-down"
-                        style="color: red; font-size: 20px;"></i>
+                        style="color: var(--preto2); font-size: 20px;"></i>
                       <span><?= $cuidador['deslike'] ?></span>
                     </span>
 

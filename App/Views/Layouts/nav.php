@@ -22,6 +22,8 @@ if (isset($_SESSION['novas_propostas'])) {
     font-weight: 500;
     margin: 0 8px;
     transition: color 0.3s ease, transform 0.2s;
+
+    white-space: nowrap;
   }
 
   .nav-link:hover {
@@ -40,13 +42,15 @@ if (isset($_SESSION['novas_propostas'])) {
 
   /* Responsivo */
   @media (max-width: 992px) {
+
+    .navbar-nav .dropdown-item {
+      padding: 0.7rem 1rem;
+    }
+
     .navbar-collapse {
       background-color: #f8f9fa;
       padding: 1rem;
       border-radius: 10px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
 
     .nav-link {
@@ -81,6 +85,12 @@ if (isset($_SESSION['novas_propostas'])) {
     .navbar .btn {
       width: auto;
     }
+
+    .dropdown {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
   }
 </style>
 
@@ -101,7 +111,7 @@ if (isset($_SESSION['novas_propostas'])) {
     </button>
 
     <!-- LINKS -->
-    <div class="collapse navbar-collapse justify-content-center align-items-center" id="navbarNav">
+    <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarNav">
       <ul class="navbar-nav me-3">
         <li class="nav-item">
           <a href="/projeto_PI/" class="nav-link active">Home</a>
@@ -118,8 +128,14 @@ if (isset($_SESSION['novas_propostas'])) {
         <li class="nav-item">
           <a href="/projeto_PI/contatos" class="nav-link">Contatos</a>
         </li>
-         <li class="nav-item">
-          <a href="/projeto_PI/politica-privacidade" class="nav-link">Politica de privacidade</a>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Outros</a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" href="/projeto_PI/politica-privacidade">Política de Privacidade</a>
+            </li>
+            <!-- <li><a class="dropdown-item" href="/projeto_PI/termos-uso">Termos de Uso</a></li> -->
+          </ul>
         </li>
       </ul>
 
