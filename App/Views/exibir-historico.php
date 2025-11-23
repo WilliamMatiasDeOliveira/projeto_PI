@@ -119,112 +119,108 @@ if (isset($_SESSION['Usuario_avaliado_com_sucesso'])) {
     </div>
 
 
-    <div class="historico-dashboard container">
-        <h2 class="mb-4 text-center">Histórico de Serviços</h2>
-
-        <!-- >>>> CONDICIONAIS PARA EVITAR MULTIPLAS AVALIAÇÕES <<<< -->
-
-        <!-- Caso o cuidador já tenha sido avaliado pelo cliente -->
-        <?php if (isset($usuario_ja_avaliado)): ?>
-            <div class="alert alert-secondary">
-                <?= $usuario_ja_avaliado ?>
-            </div>
-        <?php endif; ?>
-        <!-- Caso o cuidador ainda não tenha sido avaliado pelo cliente  -->
-        <?php if (isset($usuario_avaliado_com_sucesso)): ?>
-            <div class="alert alert-success">
-                <?= $usuario_avaliado_com_sucesso ?>
-            </div>
-        <?php endif; ?>
-
-        <?php if (!empty($res)): ?>
-            <table class="table table-primary table-striped table-hover align-middle">
-                <thead class="table-dark">
-                    <tr>
-                        <th>Data do Contato</th>
-                        <th>Descrição do Paciente</th>
-                        <th>Valor Proposto</th>
-                        <?php if ($_SESSION['user']['tipo'] === "cliente"): ?>
-                            <th>Cuidador</th>
-                        <?php else: ?>
-                            <th>Cliente</th>
-                        <?php endif; ?>
-                        <th class="text-center">Avaliação</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    $carregarCuidadorOuCliente = new AdicionarAvaliacaoDAO();
-
-                    foreach ($res as $item):
-                        // Decide qual nome buscar com base no tipo do usuário logado
-                        if ($_SESSION['user']['tipo'] === "cliente") {
-                            $avaliacao = $carregarCuidadorOuCliente->AdicionarAvaliacao((int)$item['cuidador_id']);
-                            $idUsuarioQueVaiReceberAvaliacao = $avaliacao['id_cuidador'];
-                        } else {
-                            $avaliacao = $carregarCuidadorOuCliente->AdicionarAvaliacao((int)$item['cliente_id']);
-                            $idUsuarioQueVaiReceberAvaliacao = $avaliacao['id_cliente'];
-                        }
-
-                        $_SESSION['avaliacao'] = $avaliacao;
-
-                        $nomeUsuario = $avaliacao['nome'] ?? 'Desconhecido';
-                    ?>
+    <div class="historico-dashboard">
+        <div class="historico-content">
+            <h2 class="mb-4 text-center">Histórico de Serviços</h2>
+            <!-- >>>> CONDICIONAIS PARA EVITAR MULTIPLAS AVALIAÇÕES <<<< -->
+            <!-- Caso o cuidador já tenha sido avaliado pelo cliente -->
+            <?php if (isset($usuario_ja_avaliado)): ?>
+                <div class="alert alert-secondary">
+                    <?= $usuario_ja_avaliado ?>
+                </div>
+            <?php endif; ?>
+            <!-- Caso o cuidador ainda não tenha sido avaliado pelo cliente  -->
+            <?php if (isset($usuario_avaliado_com_sucesso)): ?>
+                <div class="alert alert-success">
+                    <?= $usuario_avaliado_com_sucesso ?>
+                </div>
+            <?php endif; ?>
+            <?php if (!empty($res)): ?>
+                <table class="table table-primary table-striped table-hover align-middle">
+                    <thead class="table-dark">
                         <tr>
-                            <td><?= date("d//m//Y", strtotime($item['data_inicio'])) ?? '-' ?></td>
-                            <td><?= $item['descricao_paciente'] ?? '-' ?></td>
-                            <td>R$ <?= number_format((float)$item['valor_proposta'], 2, ',', '.') ?></td>
-                            <td><?= $nomeUsuario ?></td>
-                            <td class="text-center">
-                                <!-- Botões de like e dislike -->
-                                <a href="/projeto_PI/setarLike?id=<?= $idUsuarioQueVaiReceberAvaliacao ?>&tipo=g" class="btn btn-success btn-sm me-2" title="Curtir">
-                                    <i class="bi bi-hand-thumbs-up"></i>
-                                </a>
-                                <a href="/projeto_PI/setarLike?id=<?= $idUsuarioQueVaiReceberAvaliacao ?>&tipo=ng" class="btn btn-danger btn-sm" title="Não curtir">
-                                    <i class="bi bi-hand-thumbs-down"></i>
-                                </a>
-                            </td>
+                            <th>Data do Contato</th>
+                            <th>Descrição do Paciente</th>
+                            <th>Valor Proposto</th>
+                            <?php if ($_SESSION['user']['tipo'] === "cliente"): ?>
+                                <th>Cuidador</th>
+                            <?php else: ?>
+                                <th>Cliente</th>
+                            <?php endif; ?>
+                            <th class="text-center">Avaliação</th>
                         </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        <?php else: ?>
-            <div class="alert alert-warning text-center">
-                Nenhum histórico encontrado.
-            </div>
-        <?php endif; ?>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $carregarCuidadorOuCliente = new AdicionarAvaliacaoDAO();
+                        foreach ($res as $item):
+                            // Decide qual nome buscar com base no tipo do usuário logado
+                            if ($_SESSION['user']['tipo'] === "cliente") {
+                                $avaliacao = $carregarCuidadorOuCliente->AdicionarAvaliacao((int)$item['cuidador_id']);
+                                $idUsuarioQueVaiReceberAvaliacao = $avaliacao['id_cuidador'];
+                            } else {
+                                $avaliacao = $carregarCuidadorOuCliente->AdicionarAvaliacao((int)$item['cliente_id']);
+                                $idUsuarioQueVaiReceberAvaliacao = $avaliacao['id_cliente'];
+                            }
+                            $_SESSION['avaliacao'] = $avaliacao;
+                            $nomeUsuario = $avaliacao['nome'] ?? 'Desconhecido';
+                        ?>
+                            <tr>
+                                <td><?= date("d//m//Y", strtotime($item['data_inicio'])) ?? '-' ?></td>
+                                <td><?= $item['descricao_paciente'] ?? '-' ?></td>
+                                <td>R$ <?= number_format((float)$item['valor_proposta'], 2, ',', '.') ?></td>
+                                <td><?= $nomeUsuario ?></td>
+                                <td class="text-center">
+                                    <!-- Botões de like e dislike -->
+                                    <a href="/projeto_PI/setarLike?id=<?= $idUsuarioQueVaiReceberAvaliacao ?>&tipo=g" class="btn btn-success btn-sm me-2" title="Curtir">
+                                        <i class="bi bi-hand-thumbs-up"></i>
+                                    </a>
+                                    <a href="/projeto_PI/setarLike?id=<?= $idUsuarioQueVaiReceberAvaliacao ?>&tipo=ng" class="btn btn-danger btn-sm" title="Não curtir">
+                                        <i class="bi bi-hand-thumbs-down"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            <?php else: ?>
+                <div class="alert alert-warning text-center">
+                    Nenhum histórico encontrado.
+                </div>
+            <?php endif; ?>
+        </div>
     </div>
 </section>
 
 <div class="modal fade" id="modalExcluirConta" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-dialog">
+        <div class="modal-content">
 
-      <!-- Cabeçalho vermelho -->
-      <div class="modal-header bg-danger text-white">
-        <h5 class="modal-title">Confirmar exclusão</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-      </div>
+            <!-- Cabeçalho vermelho -->
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title">Confirmar exclusão</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
 
-      <!-- Corpo -->
-      <div class="modal-body">
-        Tem certeza que deseja excluir sua conta? Esta ação não pode ser desfeita.
-      </div>
+            <!-- Corpo -->
+            <div class="modal-body">
+                Tem certeza que deseja excluir sua conta? Esta ação não pode ser desfeita.
+            </div>
 
-      <!-- Rodapé com botões -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Cancelar
-        </button>
+            <!-- Rodapé com botões -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    Cancelar
+                </button>
 
-        <!-- Botão de confirmação -->
-        <a href="/projeto_PI/delete" class="btn btn-danger">
-          Confirmar exclusão
-        </a>
-      </div>
+                <!-- Botão de confirmação -->
+                <a href="/projeto_PI/delete" class="btn btn-danger">
+                    Confirmar exclusão
+                </a>
+            </div>
 
+        </div>
     </div>
-  </div>
 </div>
 
 

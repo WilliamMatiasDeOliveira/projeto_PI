@@ -1729,7 +1729,6 @@ ESPECIALIDADE BUSCAR
     gap: 1rem;
     flex-grow: 1;
 
-    /* IMPORTANTÍSSIMO: impede quebra */
     align-items: stretch;
 }
 
@@ -1972,6 +1971,7 @@ ESPECIALIDADE BUSCAR
 
     text-decoration: none;
 }
+
 .cuidador-feedback {
     display: flex;
     flex-direction: row;
@@ -2230,7 +2230,7 @@ ESPECIALIDADE BUSCAR
     font-size: .95rem;
 }
 
-/* ---- MOBILE ---- */
+
 @media (max-width: 768px) {
     .mvv-wrapper {
         flex-direction: column;
@@ -2263,6 +2263,170 @@ ESPECIALIDADE BUSCAR
         flex-direction: column;
     }
 }
+
+/* ======================================================================================================
+ PROPOSTAS
+====================================================================================================== */
+
+.propostas-container {
+    flex: 1;
+    background-color: var(--branco2);
+    min-height: 100vh;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.propostas-container h2 {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--preto);
+}
+
+.propostas-content {
+    background: var(--branco);
+    border-radius: var(--radius);
+
+    min-height: 100vh;
+    width: 100%;
+    max-width: 1200px;
+
+    gap: 1rem;
+
+    padding: 1rem;
+}
+
+/* ======================
+   TABELA RESPONSIVA
+====================== */
+
+@media (max-width: 768px) {
+
+    .propostas-content {
+        padding: 0.5rem;
+    }
+
+    .propostas-content table {
+        display: block;
+        width: 100%;
+    }
+
+    .propostas-content table thead {
+        display: none;
+    }
+
+    .propostas-content table tbody tr {
+        display: flex;
+        flex-direction: column;
+
+        background: var(--branco);
+        padding: 1rem;
+        margin-bottom: 12px;
+
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-light);
+        box-sizing: border-box;
+    }
+
+    .propostas-content table tbody td {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0.5rem 0;
+        border: none !important;
+        font-size: 0.95rem;
+
+        gap: 10px;
+        
+    }
+
+    .propostas-content table tbody td:nth-child(1)::before {
+        content: "Data do envio:";
+        font-weight: 600;
+    }
+
+    .propostas-content table tbody td:nth-child(2)::before {
+        content: "Valor da proposta:";
+        font-weight: 600;
+    }
+
+    .propostas-content table tbody td:nth-child(3)::before {
+        content: "Cliente:";
+        font-weight: 600;
+    }
+
+    .propostas-content table tbody td:nth-child(4)::before {
+        content: "Descrição:";
+        font-weight: 600;
+    }
+
+    .propostas-content table tbody td:nth-child(5)::before {
+        content: "Status:";
+        font-weight: 600;
+    }
+
+    .propostas-content table tbody td:nth-child(6)::before {
+        content: "Ações:";
+        font-weight: 600;
+    }
+
+    /* Ações lado a lado */
+    .propostas-content table tbody td:last-child {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .propostas-content table tbody td:last-child form {
+        margin-bottom: 6px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .propostas-content table tbody td {
+        flex-direction: column;
+        gap: 4px;
+        align-items: flex-start;
+    }
+
+    .propostas-content table tbody td::before {
+        margin-bottom: 2px;
+    }
+
+    /* Ajuste das ações */
+    .propostas-content table tbody td:last-child {
+        flex-direction: column;
+    }
+
+}
+
+
+
+
+/* ======================================================================================================
+ PAGINA HISTORICO DE SERVICOS DASHBOARD
+====================================================================================================== */
+
+.historico-dashboard {
+    flex: 1;
+    background-color: var(--branco2);
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.historico-content {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    gap: 1rem;
+}
+
 
 
 
