@@ -36,6 +36,8 @@ class ForgotPasswordController
         $token = bin2hex(random_bytes(50));
         $dao->saveResetToken($email, $token);
 
+
+
         // Monta link com token
         $resetLink = "http://localhost/projeto_PI/reset-password/$token";
 
