@@ -8,6 +8,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <html lang="pt-br">
 
 <head>
+    <!-- <base href="/projeto_PI/App/public/"> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title ?? "Conecte" ?></title>

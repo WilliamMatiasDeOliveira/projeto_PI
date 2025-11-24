@@ -33,7 +33,7 @@ if (isset($_SESSION['old'])) {
         <div class="logo-form">
             <img src="assets/imgs/logos/logobranca.svg" alt="">
         </div>
-        <form action="projeto_PI/login-submit" method="post">
+        <form action="/projeto_PI/login-submit" method="post">
 
             <div>
                 <label for="email">E-mail</label>

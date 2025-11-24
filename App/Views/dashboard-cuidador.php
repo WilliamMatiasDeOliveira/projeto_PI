@@ -135,7 +135,7 @@ if (isset($_SESSION['sucesso_resposta_enviada'])) {
                     </div>
 
                     <div class="nome-text text-center">
-                        <h3><?= $user['nome'] ?></h3>
+                        <h3><?= ucwords($user['nome']) ?></h3>
                         <small>Cuidador</small>
                     </div>
                 </div>
